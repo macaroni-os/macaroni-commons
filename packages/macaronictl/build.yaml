@@ -1,0 +1,16 @@
+image: "golang"
+prelude:
+- apt-get update
+- apt-get install -y git make
+- git clone https://github.com/${GITHUB_ORG}/${PACKAGE_NAME}.git
+env:
+- GITHUB_ORG=funtoo
+- GIT_HASH=v{{ .Values.version }}
+package_dir: /{{ .Values.name }}
+steps:
+- >-
+  cd ${PACKAGE_NAME} &&
+  git checkout "${GIT_HASH%\+*}" &&
+  make build &&
+  mkdir -p /{{ .Values.name }}/usr/bin &&
+  mv ${PACKAGE_NAME} /{{ .Values.name }}/usr/bin/${PACKAGE_NAME}
