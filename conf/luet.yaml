@@ -1,0 +1,14 @@
+general:
+  debug: false
+
+  # spinner every 30m
+  spinner_ms: 1800000
+
+  show_build_output: true
+
+solver:
+  implementation: "solverv2"
+system:
+  tmpdir_base: "/luetmp"
+
+repositories:
