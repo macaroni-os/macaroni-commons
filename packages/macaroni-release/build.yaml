@@ -1,0 +1,5 @@
+image: macaroni/funtoo-minimal
+package_dir: /release
+steps:
+- mkdir -p /release/etc/macaroni
+- echo "{{.Values.name}}" > /release/etc/macaroni/release

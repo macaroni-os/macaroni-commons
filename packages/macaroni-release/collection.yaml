@@ -1,0 +1,7 @@
+packages:
+- category: "macaroni-release"
+  name: "funtoo"
+  version: "1"
+- category: "macaroni-release"
+  name: "funtoo-systemd"
+  version: "1"
