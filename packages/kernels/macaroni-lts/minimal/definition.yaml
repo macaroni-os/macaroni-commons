@@ -6,8 +6,8 @@ arch: "x86_64"
 suffix: macaroni
 prefix: linux
 requires:
-  - category: macaronictl
-    name: app-admin
+  - category: app-admin
+    name: macaronictl
     version: ">=0"
 labels:
   autobump.revdeps: "false"
