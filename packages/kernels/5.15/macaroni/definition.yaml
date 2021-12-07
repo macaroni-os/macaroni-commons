@@ -1,0 +1,26 @@
+name: macaroni-full
+category: kernel
+version: "5.15.6"
+requires:
+  - name: "macaroni-modules"
+    category: "kernel"
+    version: ">=0"
+  - category: "app-admin"
+    name: "macaronictl"
+    version: ">=0"
+  - category: "virtual"
+    name: "sh"
+    version: ">=0"
+arch: "x86_64"
+prefix: linux
+suffix: macaroni
+labels:
+  autobump.revdeps: "false"
+  autobump.string_replace: '{ "prefix": "" }'
+  autobump.strategy: "custom"
+  autobump.prefix: "prefix"
+  autobump.hook: |
+    curl -Ls https://kernel.org/releases.json | jq -cr '[ .releases[] | select(.moniker == "longterm") ][0].version'
+  autobump.version_hook: |
+    curl -Ls https://kernel.org/releases.json | jq -cr '[ .releases[] | select(.moniker == "longterm") ][0].version'
+  package.version: "5.15.6"
