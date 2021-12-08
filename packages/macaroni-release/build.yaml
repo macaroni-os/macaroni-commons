@@ -1,4 +1,4 @@
-image: macaroni/funtoo-minimal
+image: macaronios/funtoo-minimal
 package_dir: /release
 steps:
 - mkdir -p /release/etc/macaroni
