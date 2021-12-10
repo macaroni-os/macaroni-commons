@@ -1,0 +1,10 @@
+packages:
+- category: "x11-themes"
+  name: "funtoo"
+  version: "1"
+- category: "x11-themes"
+  name: "funtoo-next"
+  version: "1"
+- category: "x11-themes"
+  name: "funtoo-tux"
+  version: "1"
