@@ -1,0 +1,10 @@
+category: "app-admin"
+name: "whip"
+version: "0.0.1"
+labels:
+  github.repo: "geaaru"
+  github.owner: "whip"
+description: "System Status Inspector and Hooks handler"
+uri:
+- "https://github.com/geaaru/whip"
+license: "GPL-3.0"
