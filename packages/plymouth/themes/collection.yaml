@@ -1,10 +1,10 @@
 packages:
 - category: "x11-themes"
-  name: "funtoo"
+  name: "plymouth-funtoo"
   version: "1"
 - category: "x11-themes"
-  name: "funtoo-next"
+  name: "plymouth-funtoo-next"
   version: "1"
 - category: "x11-themes"
-  name: "funtoo-tux"
+  name: "plymouth-funtoo-tux"
   version: "1"
