@@ -2,4 +2,4 @@ image: macaronios/funtoo-minimal
 package_dir: /{{ .Values.name }}
 steps:
 - mkdir -p /{{ .Values.name }}/usr/share/plymouth/themes/
-- mv "{{.Values.name}}" /{{ .Values.name }}/usr/share/plymouth/themes/
+- mv {{ .Values.name | replace "plymouth-" "" }} /{{ .Values.name }}/usr/share/plymouth/themes/
