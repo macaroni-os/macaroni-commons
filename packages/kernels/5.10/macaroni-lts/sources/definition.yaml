@@ -1,6 +1,6 @@
 name: macaroni-lts-sources
 category: kernel
-version: "5.10.61"
+version: "5.10.61+1"
 prefix: linux
 suffix: macaroni
 labels:
