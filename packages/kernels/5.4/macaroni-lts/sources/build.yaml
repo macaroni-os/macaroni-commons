@@ -1,0 +1,15 @@
+prelude:
+- bash copy.sh
+env:
+- KERNEL_TYPE={{ .Values.prefix }}
+- SUFFIX={{ .Values.suffix }}
+package_dir: /luetbuild/sources
+requires:
+- name: "macaroni-lts-full"
+  category: "kernel-5.4"
+  version: ">=0"
+excludes:
+# TODO: seems an issue in luet
+- /build.yaml
+- /copy.sh
+- /definition.yaml
