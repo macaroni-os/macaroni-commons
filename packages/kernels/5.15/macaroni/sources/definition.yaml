@@ -1,6 +1,6 @@
 name: macaroni-sources
 category: kernel
-version: "5.15.6"
+version: "5.15.6+1"
 prefix: linux
 suffix: macaroni
 labels:

@@ -8,3 +8,8 @@ requires:
 - name: "macaroni-full"
   category: "kernel"
   version: ">=0"
+excludes:
+# TODO: seems an issue in luet
+- /build.yaml
+- /copy.sh
+- /definition.yaml
