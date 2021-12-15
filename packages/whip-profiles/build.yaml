@@ -1,0 +1,6 @@
+image: macaronios/funtoo-minimal
+package_dir: /{{ .Values.name }}
+steps:
+- >-
+  mkdir -p /{{ .Values.name }}/etc &&
+  mv whip-{{ .Values.name }}.yml /{{ .Values.name }}/etc/whip.yml
