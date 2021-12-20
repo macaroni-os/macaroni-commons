@@ -1,7 +1,7 @@
 requires:
-- name: {{.Values.modules_name}}
-  category: kernel
-  version: ">={{ ( index .Values.labels "package.version" ) }}"
+- name: {{ .Values.modules_name }}
+  category: {{ .Values.category }}
+  version: ">=0"
 env:
 - PATH=$PATH:/usr/local/go/bin
 - GOPATH=/luetbuild/go
@@ -81,6 +81,7 @@ steps:
       --stdout initramfs.cpio \
       | dd conv=sync bs=512 \
       of=/boot/initramfs-vanilla-x86_64-${PACKAGE_VERSION}-macaroni
+
 excludes:
 - ^/luetbuild
 - ^/root
