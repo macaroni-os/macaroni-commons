@@ -1,0 +1,10 @@
+image: "macaronios/funtoo-minimal"
+prelude:
+- >-
+  git clone https://github.com/{{ ( index .Values.labels "github.owner" ) }}/{{ .Values.name }}.git &&
+  cd {{ .Values.name }} &&
+  git checkout {{ ( index .Values.labels "git.sha" ) }} &&
+  mkdir -p /{{ .Values.name }}/usr/share/macaroni/{{ .Values.name }} &&
+  cp -rvf eclass /{{ .Values.name }}/usr/share/macaroni/{{ .Values.name }}/ &&
+  cp -rvf commons /{{ .Values.name }}/usr/share/macaroni/{{ .Values.name }}/ &&
+package_dir: /{{ .Values.name }}
