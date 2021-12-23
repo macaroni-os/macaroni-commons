@@ -1,11 +1,14 @@
 image: "macaronios/funtoo-minimal"
 prelude:
 - >-
-  luet i dev-vcs/git -y &&
+  luet repo update &&
+  luet i dev-vcs/git -y --relax &&
+  luet cleanup &&
   git clone https://github.com/{{ ( index .Values.labels "github.owner" ) }}/{{ .Values.name }}.git &&
-  cd {{ .Values.name }} &&
+  cd {{ .Values.name }} && ls -l &&
   git checkout {{ ( index .Values.labels "git.sha" ) }} &&
   mkdir -p /{{ .Values.name }}/usr/share/macaroni/{{ .Values.name }} &&
+  cd catalog &&
   cp -rvf eclass /{{ .Values.name }}/usr/share/macaroni/{{ .Values.name }}/ &&
   cp -rvf commons /{{ .Values.name }}/usr/share/macaroni/{{ .Values.name }}/
 package_dir: /{{ .Values.name }}
