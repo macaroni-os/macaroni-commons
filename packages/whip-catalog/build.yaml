@@ -6,5 +6,5 @@ prelude:
   git checkout {{ ( index .Values.labels "git.sha" ) }} &&
   mkdir -p /{{ .Values.name }}/usr/share/macaroni/{{ .Values.name }} &&
   cp -rvf eclass /{{ .Values.name }}/usr/share/macaroni/{{ .Values.name }}/ &&
-  cp -rvf commons /{{ .Values.name }}/usr/share/macaroni/{{ .Values.name }}/ &&
+  cp -rvf commons /{{ .Values.name }}/usr/share/macaroni/{{ .Values.name }}/
 package_dir: /{{ .Values.name }}

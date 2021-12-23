@@ -1,6 +1,6 @@
 category: "macaroni"
 name: "whip-catalog"
-version: "0.20211222"
+version: "0.20211222+1"
 labels:
   github.repo: "whip-catalog"
   github.owner: "geaaru"
