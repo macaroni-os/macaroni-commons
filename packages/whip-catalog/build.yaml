@@ -1,6 +1,7 @@
 image: "macaronios/funtoo-minimal"
 prelude:
 - >-
+  luet i dev-vcs/git -y &&
   git clone https://github.com/{{ ( index .Values.labels "github.owner" ) }}/{{ .Values.name }}.git &&
   cd {{ .Values.name }} &&
   git checkout {{ ( index .Values.labels "git.sha" ) }} &&
