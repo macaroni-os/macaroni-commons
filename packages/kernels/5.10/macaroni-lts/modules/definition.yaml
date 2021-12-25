@@ -4,7 +4,7 @@ version: "5.10.88"
 provides:
   - category: kernel
     name: macaroni-lts-modules
-    version: "5.10.88"
+    version: ">=0"
 prefix: linux
 arch: "x86_64"
 suffix: macaroni

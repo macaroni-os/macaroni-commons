@@ -4,7 +4,7 @@ version: "5.10.88"
 provides:
   - name: macaroni-lts-minimal
     category: kernel
-    version: "5.10.88"
+    version: ">=0"
 kernelprefix: kernel-vanilla
 arch: "x86_64"
 suffix: macaroni
