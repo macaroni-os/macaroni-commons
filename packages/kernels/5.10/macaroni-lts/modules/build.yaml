@@ -3,7 +3,7 @@ steps:
 package_dir: /luetbuild/modules
 requires:
 - name: "macaroni-lts-full"
-  category: "kernel"
+  category: "kernel-5.10"
   version: ">=0"
 env:
 - KERNEL_PREFIX=vanilla

@@ -6,7 +6,7 @@ env:
 package_dir: /luetbuild/sources
 requires:
 - name: "macaroni-lts-full"
-  category: "kernel"
+  category: "kernel-5.10"
   version: ">=0"
 excludes:
 # TODO: seems an issue in luet
