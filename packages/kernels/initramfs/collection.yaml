@@ -2,9 +2,8 @@ packages:
   - category: "kernel-5.4"
     name: "macaroni-lts-initramfs"
     modules_name: "macaroni-lts-modules"
-    version: "5.4.165+3"
+    version: "5.4.168"
     git_sha: "v0.8.0"
-    #golang_version: "1.16.12"
     golang_version: "1.17.5"
     arch: "amd64"
     labels:
@@ -16,14 +15,16 @@ packages:
         curl -Ls https://kernel.org/releases.json | jq -cr '[ .releases[] | select(.moniker == "longterm") ][0].version'
       autobump.version_hook: |
         curl -Ls https://kernel.org/releases.json | jq -cr '[ .releases[] | select(.moniker == "longterm") ][0].version'
-      package.version: "5.4.165"
+      package.version: "5.4.168"
 
   - category: "kernel"
     name: "macaroni-lts-initramfs"
     modules_name: "macaroni-lts-modules"
-    version: "5.10.85"
-    git_sha: e80e77438c627981b266734c03e23dcf8a60014e
-    golang_version: "1.15.6"
+    version: "5.10.88"
+    #git_sha: e80e77438c627981b266734c03e23dcf8a60014e
+    git_sha: "v0.8.0"
+    #golang_version: "1.15.6"
+    golang_version: "1.17.5"
     arch: "amd64"
     labels:
       autobump.revdeps: "false"
@@ -34,4 +35,4 @@ packages:
         curl -Ls https://kernel.org/releases.json | jq -cr '[ .releases[] | select(.moniker == "longterm") ][0].version'
       autobump.version_hook: |
         curl -Ls https://kernel.org/releases.json | jq -cr '[ .releases[] | select(.moniker == "longterm") ][0].version'
-      package.version: "5.10.85"
+      package.version: "5.10.88"
