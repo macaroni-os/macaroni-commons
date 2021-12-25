@@ -1,6 +1,6 @@
 category: "app-admin"
 name: "whip"
-version: "0.0.1"
+version: "0.0.2"
 labels:
   github.repo: "geaaru"
   github.owner: "whip"
