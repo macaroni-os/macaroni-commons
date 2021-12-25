@@ -17,10 +17,14 @@ packages:
         curl -Ls https://kernel.org/releases.json | jq -cr '[ .releases[] | select(.moniker == "longterm") ][0].version'
       package.version: "5.4.168"
 
-  - category: "kernel"
+  - category: "kernel-5.10"
     name: "macaroni-lts-initramfs"
     modules_name: "macaroni-lts-modules"
     version: "5.10.88"
+    provides:
+      - category: kernel
+        name: "macaroni-lts-initramfs"
+        version: "5.10.88"
     #git_sha: e80e77438c627981b266734c03e23dcf8a60014e
     git_sha: "v0.8.0"
     #golang_version: "1.15.6"
