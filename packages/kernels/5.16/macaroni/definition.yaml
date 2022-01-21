@@ -11,6 +11,10 @@ requires:
   - category: "virtual"
     name: "sh"
     version: ">=0"
+provides:
+  - name: "macaroni-full"
+    category: "kernel"
+    version: ">=0"
 arch: "x86_64"
 prefix: linux
 suffix: macaroni
