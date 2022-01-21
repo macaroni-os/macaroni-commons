@@ -1,9 +1,9 @@
 name: macaroni-full
-category: kernel
+category: kernel-5.16
 version: "5.16.2"
 requires:
   - name: "macaroni-modules"
-    category: "kernel"
+    category: "kernel-5.16"
     version: ">=0"
   - category: "app-admin"
     name: "macaronictl"

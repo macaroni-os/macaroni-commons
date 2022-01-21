@@ -1,5 +1,5 @@
 name: macaroni-sources
-category: kernel
+category: kernel-5.16
 version: "5.16.2"
 prefix: linux
 suffix: macaroni
