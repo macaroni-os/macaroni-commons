@@ -3,6 +3,10 @@ category: kernel-5.16
 version: "5.16.2"
 prefix: linux
 suffix: macaroni
+provides:
+  - name: macaroni-sources
+    category: kernel
+    version: ">=0"
 labels:
   autobump.revdeps: "false"
   autobump.string_replace: '{ "prefix": "" }'
