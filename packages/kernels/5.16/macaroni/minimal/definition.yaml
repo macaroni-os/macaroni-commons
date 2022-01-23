@@ -5,6 +5,10 @@ kernelprefix: kernel-vanilla
 arch: "x86_64"
 suffix: macaroni
 prefix: linux
+provides:
+  - category: kernel
+    name: macaroni-minimal
+    version: ">=0"
 requires:
   - category: app-admin
     name: macaronictl
