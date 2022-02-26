@@ -6,6 +6,8 @@ LUET?=/usr/bin/luet
 export ROOT_DIR:=$(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 DESTINATION?=$(ROOT_DIR)/output
 COMPRESSION?=zstd
+REPO?=macaroni-commons
+REPO_EXTRA?=
 CLEAN?=true
 TREE?=./packages
 BUILD_ARGS?= --pull --image-repository quay.io/geaaru/macaroni-commons-amd64-cache --only-target-package
@@ -48,9 +50,9 @@ create-repo:
 	$(LUET) create-repo $(CONFIG) --tree "$(TREE)" \
     --output $(ROOT_DIR)/build \
     --packages $(ROOT_DIR)/build \
-    --name "macaroni-commons" \
-    --descr "Macaroni Commons Official Repository" \
-    --urls "https://macaroni.funtoo.org/mottainai/macaroni-commons" \
+    --name "$(REPO)" \
+    --descr "Macaroni Commons $(EXTRA)Official Repository" \
+    --urls "https://cdn.macaroni.funtoo.org/mottainai/$(REPO)" \
     --tree-compression $(COMPRESSION) \
     --tree-filename tree.tar \
     --meta-compression $(COMPRESSION) \
