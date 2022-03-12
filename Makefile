@@ -6,7 +6,7 @@ LUET?=/usr/bin/luet
 export ROOT_DIR:=$(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 DESTINATION?=$(ROOT_DIR)/output
 COMPRESSION?=zstd
-REPO?=macaroni-commons
+REPO_NAME?=macaroni-commons
 REPO_EXTRA?=
 CLEAN?=true
 TREE?=./packages
@@ -50,7 +50,7 @@ create-repo:
 	$(LUET) create-repo $(CONFIG) --tree "$(TREE)" \
     --output $(ROOT_DIR)/build \
     --packages $(ROOT_DIR)/build \
-    --name "$(REPO)" \
+    --name "$(REPO_NAME)" \
     --descr "Macaroni Commons $(EXTRA)Official Repository" \
     --urls "https://cdn.macaroni.funtoo.org/mottainai/$(REPO)" \
     --tree-compression $(COMPRESSION) \
