@@ -7,7 +7,7 @@ env:
 - GITHUB_ORG=geaaru
 - GIT_HASH=v{{ .Values.version }}
 - LUET_YES=true
-packages_dir: /{{ .Values.name }}
+package_dir: /{{ .Values.name }}
 steps:
 - >-
   cd ${PACKAGE_NAME} &&
