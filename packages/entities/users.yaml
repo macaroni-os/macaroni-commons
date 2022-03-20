@@ -7,7 +7,7 @@ users:
     shell: /bin/sync
     homedir: /sbin
     info: "sync"
-    group: "root"
+    gid: 0
     shadow:
       password: "*"
       minimum_changed: 0
@@ -16,7 +16,7 @@ users:
     uid: 6
     homedir: /sbin
     shell: /sbin/shutdown
-    group: "root"
+    gid: 0
     info: "shutdown"
     password: x
     shadow:
@@ -27,7 +27,7 @@ users:
     uid: 7
     homedir: /sbin
     shell: /sbin/halt
-    group: "root"
+    gid: 0
     info: "shutdown"
     password: x
     shadow:

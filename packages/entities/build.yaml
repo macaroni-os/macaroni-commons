@@ -1,0 +1,10 @@
+image: "macaronios/funtoo-minimal"
+prelude:
+- >-
+  luet repo update &&
+  luet i utils/jq utils/yq -y &&
+  luet cleanup &&
+  mkdir /{{ .Values.name }}/usr/share/macaroni/entities -p &&
+  TARGET_DIR=/{{ .Values.name }}/usr/share/macaroni/entities/
+  sh scripts/generator.sh
+package_dir: /{{ .Values.name }}

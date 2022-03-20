@@ -1,0 +1,7 @@
+category: "macaroni"
+name: "entities-catalog"
+version: "0.20220320"
+description: "Macaroni Entities Catalog"
+uri:
+- "https://github.com/funtoo/macaroni-commons"
+license: "GPL-3.0"
