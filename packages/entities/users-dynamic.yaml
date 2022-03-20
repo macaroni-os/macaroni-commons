@@ -6,7 +6,7 @@ users:
     homedir: /srv/mottainai
     group: "mottainai"
     info: "Mottainai Agent user"
-    gshadow:
+    shadow:
       password: "!"
 
   mottainai-server:
@@ -15,5 +15,5 @@ users:
     homedir: /srv/mottainai
     group: "mottainai"
     info: "Mottainai Server user"
-    gshadow:
+    shadow:
       password: "!"

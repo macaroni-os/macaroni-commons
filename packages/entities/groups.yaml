@@ -433,7 +433,7 @@ groups:
       uid: 74
       gid: 74
       homedir: /dev/null
-      shadow: /bin/false
+      shell: /bin/false
       password: x
 
   redis:
@@ -444,7 +444,7 @@ groups:
       gid: 75
       info: "Redis program user"
       homedir: /dev/null
-      shadow: /sbin/nologin
+      shell: /sbin/nologin
       password: x
     shadow:
       password: "!"
