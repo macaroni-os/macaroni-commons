@@ -6,5 +6,5 @@ prelude:
   luet cleanup &&
   mkdir /{{ .Values.name }}/usr/share/macaroni/entities -p &&
   TARGET_DIR=/{{ .Values.name }}/usr/share/macaroni/entities/
-  sh scripts/generator.sh
+  bash scripts/generator.sh
 package_dir: /{{ .Values.name }}
