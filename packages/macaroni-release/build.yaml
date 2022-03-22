@@ -1,4 +1,4 @@
-image: macaronios/funtoo-minimal
+image: macaronios/funtoo-minimal:latest-amd64
 package_dir: /release
 steps:
 - mkdir -p /release/etc/macaroni
