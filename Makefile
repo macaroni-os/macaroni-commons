@@ -79,7 +79,7 @@ repository/geaaru:
 	git clone -b master --single-branch https://github.com/geaaru/luet-specs $(ROOT_DIR)/repository/geaaru
 
 repository/macaroni-funtoo:
-	git clone -b master --single-branch https://github.com/geaaru/luet-funtoo $(ROOT_DIR)/repository/macaroni-funtoo
+	git clone -b systemd --single-branch https://github.com/geaaru/luet-funtoo $(ROOT_DIR)/repository/macaroni-funtoo
 
 .PHONY: validate
 validate: repository repository/mottainai repository/geaaru repository/macaroni-funtoo
