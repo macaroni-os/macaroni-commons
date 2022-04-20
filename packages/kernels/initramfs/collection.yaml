@@ -4,7 +4,7 @@ packages:
     modules_name: "macaroni-lts-modules"
     version: "5.4.183"
     git_sha: "v0.8.0"
-    golang_version: "1.17.5"
+    golang_version: "1.17.9"
     arch: "amd64"
     labels:
       autobump.revdeps: "false"
@@ -28,7 +28,7 @@ packages:
     #git_sha: e80e77438c627981b266734c03e23dcf8a60014e
     git_sha: "v0.8.0"
     #golang_version: "1.15.6"
-    golang_version: "1.17.5"
+    golang_version: "1.17.9"
     arch: "amd64"
     labels:
       autobump.revdeps: "false"
