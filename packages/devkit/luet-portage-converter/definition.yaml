@@ -1,6 +1,6 @@
 category: "extension"
 name: "luet-portage-converter"
-version: "0.10.5"
+version: "0.10.6"
 license: "GPL-3.0"
 labels:
   github.repo: "luet-portage-converter"
