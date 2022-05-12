@@ -1,6 +1,6 @@
 category: "macaroni"
 name: "entities-catalog"
-version: "0.20220510"
+version: "0.20220512"
 description: "Macaroni Entities Catalog"
 uri:
 - "https://github.com/funtoo/macaroni-commons"

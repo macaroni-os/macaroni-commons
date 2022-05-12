@@ -127,7 +127,7 @@ password: \"\"
     # POST: creating gshadow file
     echo "
 kind: gshadow
-username: ${grp}
+members: ${grp}
 " > ${gf}
 
     echo "${gshadow}" | yq r - -P > /tmp/entity.yaml
