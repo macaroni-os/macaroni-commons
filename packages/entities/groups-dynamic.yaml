@@ -4,3 +4,8 @@ groups:
     password: "x"
     gshadow:
       password: "!"
+
+  games:
+    password: "x"
+    gshadow:
+      password: "!"
