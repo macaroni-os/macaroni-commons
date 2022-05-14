@@ -49,6 +49,8 @@ groups:
     shadow:
       password: "*"
       minimum_changed: 0
+    gshadow:
+      members: "bin,daemon"
 
   daemon:
     gid: 2
@@ -63,6 +65,8 @@ groups:
     shadow:
       password: "*"
       minimum_changed: 0
+    gshadow:
+      members: "bin,daemon"
 
   sys:
     gid: 3
@@ -84,6 +88,9 @@ groups:
     shadow:
       password: "*"
       minimum_changed: 0
+    gshadow:
+      members: "adm,daemon"
+
 
   tty:
     password: x
@@ -290,6 +297,8 @@ groups:
       minimum_changed: 0
       maximum_changed: 99999
       warn: 7
+    gshadow:
+      members: "gdm"
 
   gamestat:
     gid: 36
@@ -508,6 +517,7 @@ groups:
       warn: 7
     gshadow:
       password: x
+      members: "apache"
 
   nginx:
     gid: 82
