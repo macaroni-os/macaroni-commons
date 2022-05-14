@@ -4406,7 +4406,8 @@ groups:
     gshadow:
       password: "!"
 
-  pcap:
+  # pcap: On Gentoo
+  tcpdump:
     gid: 377
     # TODO: to check
     password: x
