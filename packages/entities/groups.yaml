@@ -6158,6 +6158,36 @@ groups:
     # TODO: to check
     password: x
 
+  systemd-journal-gateway:
+    gid: 506
+    password: x
+    user:
+      uid: 506
+      gid: 506
+      info: "System user systemd-journal-gateway"
+      homedir: /dev/null
+      shell: /sbin/nologin
+      password: x
+    shadow:
+      password: "!"
+    gshadow:
+      password: "!"
+
+  systemd-journal-upload:
+    gid: 507
+    password: x
+    user:
+      uid: 507
+      gid: 507
+      info: "System user systemd-journal-upload"
+      homedir: /dev/null
+      shell: /sbin/nologin
+      password: x
+    shadow:
+      password: "!"
+    gshadow:
+      password: "!"
+
   nogroup:
     gid: 65533
     # TODO: to check
