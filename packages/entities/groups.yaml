@@ -6188,6 +6188,21 @@ groups:
     gshadow:
       password: "!"
 
+  arangodb3:
+    gid: 508
+    password: x
+    user:
+      uid: 508
+      gid: 508
+      info: "ArangoDB users"
+      homedir: /home/arangodb3
+      shell: /sbin/nologin
+      password: x
+    shadow:
+      password: "!"
+    gshadow:
+      password: "!"
+
   nogroup:
     gid: 65533
     # TODO: to check
