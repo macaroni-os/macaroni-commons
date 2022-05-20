@@ -9,7 +9,10 @@ ASAP.
 ## Images
 
 1. File: macaroni1.jpeg
+   
    Author: kuhnmi
+   
    License: Creative Commons 2.0
+   
    Original URL: https://www.flickr.com/photos/31176607@N05/50794746156/in/photolist-2koymns
 
