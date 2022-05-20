@@ -2,5 +2,7 @@ image: "macaronios/funtoo-minimal:latest-amd64"
 steps:
 - >-
   mkdir -p /{{ .Values.name }}/etc/skel &&
-  cp -rf .config /{{ .Values.name }}/etc/skel/
+  cp -rf .config /{{ .Values.name }}/etc/skel/ &&
+  mkdir -p /{{ .Values.name }}/usr/share/backgrounds/macaroni/ &&
+  cp -vf backgrounds/*.jpg /{{ .Values.name }}/usr/share/backgrounds/macaroni/
 package_dir: /{{ .Values.name }}
