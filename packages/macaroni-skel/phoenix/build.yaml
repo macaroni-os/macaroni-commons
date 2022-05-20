@@ -1,0 +1,6 @@
+image: "macaronios/funtoo-minimal:latest-amd64"
+steps:
+- >-
+  mkdir -p /{{ .Values.name }}/etc/skel &&
+  cp -rf .config /{{ .Values.name }}/etc/skel/
+package_dir: /{{ .Values.name }}
