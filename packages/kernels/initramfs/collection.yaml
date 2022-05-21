@@ -20,14 +20,14 @@ packages:
   - category: "kernel-5.10"
     name: "macaroni-lts-initramfs"
     modules_name: "macaroni-lts-modules"
-    version: "5.10.113"
+    version: "5.10.113+1"
     provides:
       - category: kernel
         name: "macaroni-lts-initramfs"
         version: ">=0"
     #git_sha: e80e77438c627981b266734c03e23dcf8a60014e
-    git_sha: "v0.8.0"
-    golang_version: "1.17.9"
+    git_sha: "v1.0.1"
+    golang_version: "1.18.2"
     arch: "amd64"
     labels:
       autobump.revdeps: "false"

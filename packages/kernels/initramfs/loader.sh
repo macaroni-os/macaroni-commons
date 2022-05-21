@@ -29,44 +29,44 @@ shell() {
 }
 
 parse_cmdline() {
-	read -r cmdline < /proc/cmdline
+  read -r cmdline < /proc/cmdline
 
-	for param in $cmdline ; do
-		case $param in
-			*=*) key=${param%%=*}; value=${param#*=} ;;
-			'#'*) break ;;
-			*) key=$param
-		esac
-		case $key in
-			ro|rw) rwopt=$key ;;
-			[![:alpha:]_]*|[[:alpha:]_]*[![:alnum:]_]*) ;;
-			*) eval "$key"=${value:-y} ;;
-		esac
-		unset key value
-	done
+  for param in $cmdline ; do
+    case $param in
+      *=*) key=${param%%=*}; value=${param#*=} ;;
+      '#'*) break ;;
+      *) key=$param
+    esac
+    case $key in
+      ro|rw) rwopt=$key ;;
+      [![:alpha:]_]*|[[:alpha:]_]*[![:alnum:]_]*) ;;
+      *) eval "$key"=${value:-y} ;;
+    esac
+    unset key value
+  done
 
-	case "$root" in
-		/dev/* ) device=$root ;;
-		UUID=* ) eval $root; device="/dev/disk/by-uuid/$UUID"  ;;
-		LABEL=*) eval $root; device=$(blkid -t LABEL=$LABEL -o device) ;;
-	esac
+  case "$root" in
+    /dev/* ) device=$root ;;
+    UUID=* ) eval $root; device="/dev/disk/by-uuid/$UUID"  ;;
+    LABEL=*) eval $root; device=$(blkid -t LABEL=$LABEL -o device) ;;
+  esac
 }
 
 shell() {
-	setsid sh -c 'exec sh </dev/tty1 >/dev/tty1 2>&1'
+  setsid sh -c 'exec sh </dev/tty1 >/dev/tty1 2>&1'
 }
 
 mount_root() {
-	newroot=$1
-	dev=$2
-	if [ ! "$dev" ]; then
-		echo "device not specified!"
-		shell
-	fi
-	if ! mount -n ${rootfstype:+-t $rootfstype} -o ${rwopt:-ro}${rootflags:+,$rootflags} "$dev" "$newroot" ; then
-		echo "cant mount: $dev"
-		shell
-	fi
+  newroot=$1
+  dev=$2
+  if [ ! "$dev" ]; then
+    echo "device not specified!"
+    shell
+  fi
+  if ! mount -n ${rootfstype:+-t $rootfstype} -o ${rwopt:-ro}${rootflags:+,$rootflags} "$dev" "$newroot" ; then
+    echo "cant mount: $dev"
+    shell
+  fi
 }
 
 search_overlay() {
@@ -107,7 +107,7 @@ search_overlay() {
       if [ ! "$OUT" = "0" ] ; then
         echo -e "  \\e[31mMount failed (squashfs).\\e[0m"
       fi
-      
+
       OVERLAY_DIR=$IMAGE_MNT
       OVERLAY_MNT=$IMAGE_MNT
       UPPER_DIR=$DEFAULT_UPPER_DIR
@@ -118,7 +118,7 @@ search_overlay() {
       mkdir -p $OVERLAY_DIR
       mkdir -p $UPPER_DIR
       mkdir -p $WORK_DIR
-      
+
       mount -t overlay -o lowerdir=$OVERLAY_DIR:/mnt,upperdir=$UPPER_DIR,workdir=$WORK_DIR none /mnt
       OUT=$?
 
@@ -166,7 +166,7 @@ mount_system() {
 
     rwopt="rw"
     mount_root $rootdevice $device
-    
+
   else
     search_overlay
   fi
