@@ -1,6 +1,6 @@
 name: macaroni-minimal
 category: kernel-5.18
-version: 5.18
+version: "5.18"
 kernelprefix: kernel-vanilla
 arch: "x86_64"
 suffix: macaroni

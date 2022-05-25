@@ -1,6 +1,6 @@
 name: macaroni-full
 category: kernel-5.18
-version: 5.18
+version: "5.18"
 requires:
   - name: "macaroni-modules"
     category: "kernel-5.18"

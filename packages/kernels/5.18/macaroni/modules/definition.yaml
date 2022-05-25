@@ -1,6 +1,6 @@
 name: macaroni-modules
 category: kernel-5.18
-version: 5.18
+version: "5.18"
 prefix: linux
 arch: "x86_64"
 suffix: macaroni

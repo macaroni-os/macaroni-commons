@@ -1,6 +1,6 @@
 name: macaroni-sources
 category: kernel-5.18
-version: 5.18
+version: "5.18"
 prefix: linux
 suffix: macaroni
 provides:
