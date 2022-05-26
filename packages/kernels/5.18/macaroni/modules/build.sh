@@ -5,6 +5,11 @@ outdir="/luetbuild/modules"
 mkdir -p $outdir/boot
 pushd linux 
 
+minor=$(echo $RELEASE | cut -d'.' -f 3)
+if [ "${minor}" == "" ] ; then
+  PACKAGE_VERSION="${PACKAGE_VERSION}.0"
+fi
+
 if [ ! -e "arch/x86/boot/bzImage" ]; then
     cp -rfv ../output/* arch/x86/boot/bzImage || true
 fi
