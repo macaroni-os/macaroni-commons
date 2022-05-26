@@ -10,6 +10,8 @@ fi
 
 make -j$(nproc --ignore=1) KBUILD_BUILD_VERSION="$PACKAGE_VERSION-Macaroni"
 
+ls -l arch/${ARCH}/boot/
+
 if [[ -L "arch/${ARCH}/boot/bzImage" ]]; then
    cp -rfv $(readlink -f "arch/${ARCH}/boot/bzImage") ../output/boot/"kernel-${KERNEL_PREFIX}-${ARCH}-${PACKAGE_VERSION}-${SUFFIX}"
 else
