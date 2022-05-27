@@ -3,7 +3,7 @@ PACKAGE_VERSION=${PACKAGE_VERSION%\+*}
 mkdir -p output/boot
 pushd ${KERNEL_TYPE}
 
-minor=$(echo $RELEASE | cut -d'.' -f 3)
+minor=$(echo $PACKAGE_VERSION | cut -d'.' -f 3)
 if [ "${minor}" == "" ] ; then
   PACKAGE_VERSION="${PACKAGE_VERSION}.0"
 fi
