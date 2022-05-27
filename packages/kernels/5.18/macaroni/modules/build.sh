@@ -1,9 +1,11 @@
 #!/bin/bash
 
+set -x
+
 PACKAGE_VERSION=${PACKAGE_VERSION%\+*}
 outdir="/luetbuild/modules"
 mkdir -p $outdir/boot
-pushd linux 
+pushd linux
 
 minor=$(echo $PACKAGE_VERSION | cut -d'.' -f 3)
 if [ "${minor}" == "" ] ; then
@@ -15,8 +17,8 @@ if [ ! -e "arch/x86/boot/bzImage" ]; then
 fi
 
 make -j$(nproc --ignore=1) modules_install install \
-		INSTALL_MOD_PATH="$outdir" \
-		INSTALL_PATH="$outdir"/boot
+  INSTALL_MOD_PATH="$outdir" \
+  INSTALL_PATH="$outdir"/boot
 
 rm -f "$outdir"/lib/modules/**/build \
     "$outdir"/lib/modules/**/source

@@ -5,6 +5,7 @@ provides:
 - name: macaroni-modules
   version: '>=0'
   category: kernel
+suffix: macaroni
 labels:
   autobump.hook: |
     curl -Ls https://kernel.org/releases.json | jq -cr '[ .releases[] | select(.moniker == "longterm") ][0].version'
