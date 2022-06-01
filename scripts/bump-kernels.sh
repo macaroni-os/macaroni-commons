@@ -1,6 +1,12 @@
 #!/bin/bash
 
-BRANCH=$(echo $RELEASE | sed -e 's/[.][0-9]*$//g')
+minor=$(echo $RELEASE | cut -d'.' -f 3)
+
+if [ "${minor}" == "" ] ; then
+  BRANCH=$RELEASE
+else
+  BRANCH=$(echo $RELEASE | sed -e 's/[.][0-9]*$//g')
+fi
 
 main () {
 
