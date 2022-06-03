@@ -1,7 +1,9 @@
 packages:
 - category: "macaroni-release"
   name: "funtoo"
-  version: "1"
+  release: "phoenix"
+  version: "2"
 - category: "macaroni-release"
   name: "funtoo-systemd"
-  version: "1"
+  release: "eagle"
+  version: "2"
