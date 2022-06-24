@@ -21,4 +21,5 @@ jobs:
         # sudo chmod a+x /usr/bin/luet
       run: |
         curl https://raw.githubusercontent.com/geaaru/luet/geaaru/contrib/config/get_luet_root.sh | sudo sh
+        sudo luet i system/luet-build -y
         make validate
