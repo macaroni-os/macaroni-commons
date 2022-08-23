@@ -15,12 +15,7 @@ CONFIG?= --config conf/luet.yaml
 export LUET_BIN?=$(LUET)
 
 .PHONY: all
-all: deps build
-
-.PHONY: deps
-deps:
-	@echo "Installing luet"
-	go get -u github.com/mudler/luet
+all: build
 
 .PHONY: clean
 clean:
