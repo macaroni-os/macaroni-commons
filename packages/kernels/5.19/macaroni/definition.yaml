@@ -1,6 +1,10 @@
 name: macaroni-full
 category: kernel-5.19
 version: 5.19.3
+provides:
+  - category: kernel
+    name: macaroni-full
+    version: ">=0"
 requires:
   - name: "macaroni-modules"
     category: "kernel-5.19"
