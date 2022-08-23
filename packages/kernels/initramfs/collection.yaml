@@ -40,17 +40,17 @@ packages:
         curl -Ls https://kernel.org/releases.json | jq -cr '[ .releases[] | select(.moniker == "longterm") ][0].version'
       package.version: "5.10.137"
 
-  - category: "kernel-5.18"
+  - category: "kernel-5.19"
     name: "macaroni-initramfs"
     modules_name: "macaroni-modules"
-    version: "5.18"
+    version: "5.19"
     provides:
       - category: kernel
         name: "macaroni-initramfs"
         version: ">=0"
     #git_sha: e80e77438c627981b266734c03e23dcf8a60014e
     git_sha: "v1.0.1"
-    golang_version: "1.18.2"
+    golang_version: "1.18.5"
     arch: "amd64"
     labels:
       autobump.revdeps: "false"
@@ -61,5 +61,5 @@ packages:
         curl -Ls https://kernel.org/releases.json | jq -cr '[ .releases[] | select(.moniker == "longterm") ][0].version'
       autobump.version_hook: |
         curl -Ls https://kernel.org/releases.json | jq -cr '[ .releases[] | select(.moniker == "longterm") ][0].version'
-      package.version: "5.18.0"
+      package.version: "5.19.3"
 
