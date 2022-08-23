@@ -4,6 +4,10 @@ version: 5.19.3
 prefix: linux
 arch: "x86_64"
 suffix: macaroni
+provides:
+  - category: kernel
+    name: macaroni-modules
+    version: ">=0"
 labels:
   autobump.revdeps: "false"
   autobump.string_replace: '{ "prefix": "" }'
