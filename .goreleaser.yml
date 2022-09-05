@@ -1,0 +1,21 @@
+project_name: Funtoo Macaroni Commons
+build:
+  skip: true
+release:
+  header: |
+    ## Funtoo Macaroni Commons {{ .Tag }}!
+
+changelog:
+  sort: asc
+  groups:
+    - title: Packages
+      regexp: ".*Bump.*"
+      order: 1
+    - title: Others
+      order: 9999
+  filters:
+    exclude:
+      - '^.github'
+      - '^github'
+      - '^portage-converter'
+      - '^Revert.*'
