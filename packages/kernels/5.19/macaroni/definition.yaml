@@ -1,6 +1,6 @@
 name: macaroni-full
 category: kernel-5.19
-version: 5.19.7
+version: 5.19.11
 provides:
   - category: kernel
     name: macaroni-full
@@ -27,4 +27,4 @@ labels:
     curl -Ls https://kernel.org/releases.json | jq -cr '[ .releases[] | select(.moniker == "longterm") ][0].version'
   autobump.version_hook: |
     curl -Ls https://kernel.org/releases.json | jq -cr '[ .releases[] | select(.moniker == "longterm") ][0].version'
-  package.version: 5.19.7
+  package.version: 5.19.11
