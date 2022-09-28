@@ -43,7 +43,7 @@ packages:
   - category: "kernel-5.15"
     name: "macaroni-lts-initramfs"
     modules_name: "macaroni-lts-modules"
-    version: "5.15.70"
+    version: "5.15.71"
     provides:
       - category: kernel
         name: "macaroni-lts-initramfs"
@@ -53,7 +53,7 @@ packages:
     golang_version: "1.18.2"
     arch: "amd64"
     labels:
-      package.version: "5.15.70"
+      package.version: "5.15.71"
 
   - category: "kernel-5.19"
     name: "macaroni-initramfs"
