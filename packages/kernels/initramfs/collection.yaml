@@ -20,7 +20,7 @@ packages:
   - category: "kernel-5.10"
     name: "macaroni-lts-initramfs"
     modules_name: "macaroni-lts-modules"
-    version: "5.10.145+1"
+    version: "5.10.145+2"
     provides:
       - category: kernel
         name: "macaroni-lts-initramfs"
