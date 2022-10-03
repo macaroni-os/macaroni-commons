@@ -7,7 +7,7 @@ env:
 - GOPATH=/luetbuild/go
 - GO111MODULE=off
 - CGO_ENABLED=0
-
+package_dir: /initramfs
 prelude:
 
 - apt-get install -y upx kmod
@@ -45,6 +45,9 @@ steps:
 - find /luetbuild/modules/lib/modules/**/kernel/drivers/virtio  -exec cp -r --parents {} ./modules_copy \;
 - find /luetbuild/modules/lib/modules/**/kernel/drivers/scsi  -exec cp -r --parents {} ./modules_copy \;
 - find /luetbuild/modules/lib/modules/**/kernel/drivers/md  -exec cp {} -r --parents ./modules_copy \;
+- find /luetbuild/modules/lib/modules/**/kernel/drivers/nvme  -exec cp {} -r --parents ./modules_copy \;
+- find /luetbuild/modules/lib/modules/**/kernel/drivers/video  -exec cp {} -r --parents ./modules_copy \;
+- find /luetbuild/modules/lib/modules/**/kernel/drivers/vfio  -exec cp {} -r --parents ./modules_copy \;
 
 # Ethernet + address family: af_packet
 - find /luetbuild/modules/lib/modules/**/kernel/drivers/net/ethernet  -exec cp -r --parents {} ./modules_copy \;
@@ -58,8 +61,8 @@ steps:
 
 - |
    u-root \
-   -files "/luetbuild/loader.sh:/loader" \
-   -files "/luetbuild/modules/lib/modules:/lib/modules" \
+   -files "/luetbuild/loader.sh:loader" \
+   -files "/luetbuild/modules_copy/luetbuild/modules/lib/modules:lib/modules" \
    -files "$(which blkid)" \
    -files "$(which mount)" \
    -files "$(which umount)" \
@@ -87,6 +90,11 @@ steps:
       --stdout initramfs.cpio \
       | dd conv=sync bs=512 \
       of=/boot/initramfs-vanilla-x86_64-${PACKAGE_VERSION}-macaroni
+
+- >-
+  PACKAGE_VERSION=${PACKAGE_VERSION%\+*} &&
+  eval 'mkdir -p /initramfs/boot || true' &&
+  cp -v /boot/initramfs-vanilla-x86_64-${PACKAGE_VERSION}-macaroni /initramfs/boot/
 
 excludes:
 - ^/luetbuild
