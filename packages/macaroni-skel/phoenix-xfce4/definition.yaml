@@ -1,0 +1,15 @@
+name: skel-phoenix-xfce4
+version: "0.20221003"
+category: macaroni
+description: Macaroni Phoenix Skel Files for XFCE
+requires:
+- category: macaroni
+  name: skel-phoenix
+  version: ">=0"
+# TODO: Needed for the application icon. Move to a common icons package?
+- category: x11-themes
+  name: macaroni-gnome-shell-theme
+  version: ">=0"
+uri:
+- https://github.com/funtoo/macaroni-commons
+license: GPL-3.0
