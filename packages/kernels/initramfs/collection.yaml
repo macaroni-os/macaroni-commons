@@ -54,7 +54,7 @@ packages:
   - category: "kernel-5.19"
     name: "macaroni-initramfs"
     modules_name: "macaroni-modules"
-    version: "5.19.12+1"
+    version: "5.19.12+2"
     provides:
       - category: kernel
         name: "macaroni-initramfs"
