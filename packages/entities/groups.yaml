@@ -2211,7 +2211,7 @@ groups:
     user:
       uid: 219
       gid: 219
-      homedir: /dev/null
+      homedir: /var/lib/sddm
       shell: /sbin/nologin
       password: x
     shadow:
