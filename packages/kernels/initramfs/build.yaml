@@ -53,7 +53,7 @@ steps:
 # Create modules.* files
 - find /luetbuild/modules/lib/modules/**/modules.*  -exec cp -v {} -r --parents ./modules_copy \;
 - >-
-  PACKAGE_VERSION=${PACKAGE_VERSION%\+*} && \
+  PACKAGE_VERSION=${PACKAGE_VERSION%\+*} &&
   depmod -a ${PACKAGE_VERSION}-macaroni -b  modules_copy/luetbuild/modules/
 
 - |
