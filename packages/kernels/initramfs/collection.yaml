@@ -2,7 +2,7 @@ packages:
   - category: "kernel-5.4"
     name: "macaroni-lts-initramfs"
     modules_name: "macaroni-lts-modules"
-    version: "5.4.215"
+    version: "5.4.215+1"
     git_sha: "v1.0.1"
     golang_version: "1.18.2"
     arch: "amd64"
