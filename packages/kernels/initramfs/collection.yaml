@@ -54,13 +54,14 @@ packages:
   - category: "kernel-5.19"
     name: "macaroni-initramfs"
     modules_name: "macaroni-modules"
-    version: "5.19.12"
+    version: "5.19.12+1"
     provides:
       - category: kernel
         name: "macaroni-initramfs"
         version: ">=0"
-    #git_sha: e80e77438c627981b266734c03e23dcf8a60014e
-    git_sha: "v1.0.1"
+    # The upstream version support compressed kernel modules.
+    git_sha: 20014d2d4de3cb96efbecafc98912f8b348105a9
+    #git_sha: "v1.0.1"
     golang_version: "1.19.1"
     arch: "amd64"
     labels:
