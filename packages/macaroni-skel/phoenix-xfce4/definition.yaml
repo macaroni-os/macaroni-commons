@@ -5,9 +5,13 @@ requires:
 - name: skel-phoenix
   version: '>=0'
   category: macaroni
-- name: macaroni-gnome-shell-theme
-  version: '>=0'
-  category: x11-themes
+# TODO: just avoid this for now
+#       because it generates errors
+#       on tree validation of the
+#       macaroni-funtoo systemd branch
+#- name: macaroni-gnome-shell-theme
+#  version: '>=0'
+#  category: x11-themes
 description: Macaroni Phoenix Skel Files for XFCE
 uri:
 - https://github.com/funtoo/macaroni-commons
