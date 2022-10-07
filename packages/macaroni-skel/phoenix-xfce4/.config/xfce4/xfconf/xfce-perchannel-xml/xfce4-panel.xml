@@ -29,8 +29,8 @@
     </property>
     <property name="panel-2" type="empty">
       <property name="autohide-behavior" type="uint" value="1"/>
-      <property name="position" type="string" value="p=12;x=567;y=631"/>
-      <property name="length" type="uint" value="26"/>
+      <property name="position" type="string" value="p=10;x=645;y=825"/>
+      <property name="length" type="uint" value="22"/>
       <property name="position-locked" type="bool" value="true"/>
       <property name="size" type="uint" value="48"/>
       <property name="plugin-ids" type="array">
