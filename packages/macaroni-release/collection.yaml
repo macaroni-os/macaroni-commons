@@ -7,3 +7,8 @@ packages:
   name: "funtoo-systemd"
   release: "eagle"
   version: "2"
+- category: "macaroni-release"
+  name: "terragon"
+  release: "terragon"
+  version: "1"
+
