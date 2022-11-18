@@ -6203,6 +6203,21 @@ groups:
     gshadow:
       password: "!"
 
+  snmp_notifier:
+    gid: 509
+    password: x
+    user:
+      uid: 509
+      gid: 509
+      info: "SNMP Notifier Application"
+      homedir: /dev/null
+      shell: /sbin/nologin
+      password: x
+    shadow:
+      password: "!"
+    gshadow:
+      password: "!"
+
   nogroup:
     gid: 65533
     # TODO: to check
