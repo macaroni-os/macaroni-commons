@@ -20,7 +20,7 @@ packages:
   - category: "kernel-5.10"
     name: "macaroni-lts-initramfs"
     modules_name: "macaroni-lts-modules"
-    version: "5.10.155"
+    version: "5.10.156"
     provides:
       - category: kernel
         name: "macaroni-lts-initramfs"
@@ -38,7 +38,7 @@ packages:
         curl -Ls https://kernel.org/releases.json | jq -cr '[ .releases[] | select(.moniker == "longterm") ][0].version'
       autobump.version_hook: |
         curl -Ls https://kernel.org/releases.json | jq -cr '[ .releases[] | select(.moniker == "longterm") ][0].version'
-      package.version: "5.10.155"
+      package.version: "5.10.156"
 
   - category: "kernel-5.15"
     name: "macaroni-lts-initramfs"
