@@ -13,7 +13,7 @@ prelude:
 - >-
   export LUET_YES=true &&
   luet repo update &&
-  luet i app-arch/upx-bin sys-apps/kmod &&
+  luet i app-arch/upx-bin sys-apps/kmod sys-apps/which &&
   luet cleanup --purge-repos
 
 - wget https://golang.org/dl/go{{.Values.golang_version}}.linux-{{.Values.arch}}.tar.gz -O golang.tar.gz
@@ -36,7 +36,7 @@ steps:
 
 # grab deps library for udev probe init functionalities
 - go get github.com/pilebones/go-udev
-- go get pault.ag/go/modprobe
+#- go get pault.ag/go/modprobe
 
 - mkdir modules_copy
 - find /luetbuild/modules/lib/modules/**/kernel/fs  -exec cp {} -r --parents ./modules_copy \;
@@ -66,6 +66,7 @@ steps:
   PACKAGE_VERSION=${PACKAGE_VERSION%\+*} &&
   depmod -a ${PACKAGE_VERSION}-macaroni -b  modules_copy/luetbuild/modules/
 
+# -files "$(which modprobe)" \
 - |
   cd $GOPATH/src/github.com/u-root/u-root && \
   u-root \
@@ -79,7 +80,6 @@ steps:
   -files "$(which setsid)" \
   -files "$(which switch_root)" \
   -files "$(which mkdir)" \
-  -files "$(which modprobe)" \
   -files "$(which sh)" \
   -files "$(which bash)" \
   -format=cpio -build=bb -defaultsh="" \
@@ -87,6 +87,7 @@ steps:
   github.com/u-root/u-root/cmds/core/ls \
   github.com/u-root/u-root/cmds/core/dhclient \
   github.com/u-root/u-root/cmds/core/init \
+  github.com/u-root/u-root/cmds/exp/modprobe \
   github.com/u-root/u-root/cmds/core/cat \
   github.com/u-root/u-root/cmds/core/echo \
   github.com/u-root/u-root/cmds/core/chroot \

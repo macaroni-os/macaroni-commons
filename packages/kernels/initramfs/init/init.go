@@ -11,7 +11,6 @@ import (
 
 	"github.com/u-root/u-root/pkg/libinit"
 	"github.com/u-root/u-root/pkg/ulog"
-	gomodprobe "pault.ag/go/modprobe"
 )
 
 type initCmds struct {
@@ -40,13 +39,6 @@ func modprobe(s string) (string, error) {
 		return "", err
 	}
 	return string(stdoutStderr), nil
-}
-
-func modprobeNative(s string) (string, error) {
-	if err := gomodprobe.Load(s, ""); err != nil {
-		return "", err
-	}
-	return "", nil
 }
 
 func depmod() (string, error) {
@@ -119,9 +111,11 @@ func main() {
 
 	//	debug = log.Printf
 
-	if err := ulog.KernelLog.SetConsoleLogLevel(ulog.KLogEmergency); err != nil {
-		log.Printf("Could not set log level: %v", err)
-	}
+	//if err := ulog.KernelLog.SetConsoleLogLevel(ulog.KLogEmergency); err != nil {
+	//	log.Printf("Could not set log level: %v", err)
+	//}
+
+	log.Printf("Funtoo Macaroni OS initialization...")
 
 	libinit.SetEnv()
 	// CreateRootfs creates a symlink to /dev/pts/ptmx
