@@ -10,7 +10,12 @@ env:
 package_dir: /initramfs
 prelude:
 
-- apt-get install -y upx kmod
+- >-
+  export LUET_YES=true &&
+  luet repo update &&
+  luet i app-arch/upx-bin sys-apps/kmod &&
+  luet cleanup --purge-repos
+
 - wget https://golang.org/dl/go{{.Values.golang_version}}.linux-{{.Values.arch}}.tar.gz -O golang.tar.gz
 
 - tar -C /usr/local -xzf golang.tar.gz
