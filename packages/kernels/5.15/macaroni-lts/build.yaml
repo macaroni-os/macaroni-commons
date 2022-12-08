@@ -8,6 +8,7 @@ env:
 - KERNEL_TYPE={{ .Values.prefix }}
 prelude:
 - |
+  export DEBIAN_FRONTEND=noninteractive && \
   apt-get update               && \
   apt-get -y -q upgrade        && \
   apt-get install -y -q apt-utils dialog zstd \
