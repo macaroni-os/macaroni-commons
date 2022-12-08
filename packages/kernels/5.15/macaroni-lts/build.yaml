@@ -10,7 +10,7 @@ prelude:
 - |
   apt-get update               && \
   apt-get -y -q upgrade        && \
-  apt-get install -y -q apt-utils dialog\
+  apt-get install -y -q apt-utils dialog zstd \
       xz-utils wget sudo aptitude flex bison libncurses5-dev make git exuberant-ctags bc libssl-dev libelf-dev \
       gcc-${GCC_VERSION} g++-${GCC_VERSION} gcc-${GCC_VERSION}-plugin-dev gcc g++ \
       gcc-${GCC_VERSION}-aarch64-linux-gnu g++-${GCC_VERSION}-aarch64-linux-gnu \
