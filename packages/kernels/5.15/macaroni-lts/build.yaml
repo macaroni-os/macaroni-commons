@@ -1,10 +1,10 @@
 image: "macaronios/terragon-minimal-devel:latest-amd64"
 # TODO: move to macaronios/funtoo-minimal soon.
 env:
-- ARCH={{.Values.arch}}
+- ARCH=x86_64
 - KERNEL_PREFIX=vanilla
-- SUFFIX={{ .Values.suffix }}
-- KERNEL_TYPE={{ .Values.prefix }}
+- SUFFIX=macaroni
+- KERNEL_TYPE=linux
 prelude:
 - >-
   export LUET_YES=true &&

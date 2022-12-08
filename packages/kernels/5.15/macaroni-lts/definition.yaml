@@ -1,5 +1,5 @@
 name: macaroni-lts-full
-version: 5.15.82+4
+version: 5.15.82+5
 category: kernel-5.15
 requires:
 - name: macaroni-lts-modules
