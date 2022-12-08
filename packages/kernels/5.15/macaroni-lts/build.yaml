@@ -11,7 +11,7 @@ prelude:
   luet i app-arch/zstd app-arch/xz-utils sys-devel/flex
   sys-devel/bison sys-libs/ncurses sys-devel/make dev-util/kbuild
   dev-vcs/git dev-libs/openssl dev-libs/elfutils
-  sys-devel-2.36/binutils sys-libs/binutils-libs sys-devel/binutils-config
+  sys-devel-2.36/binutils sys-libs/binutils-libs
   sys-devel/gcc-config
   sys-apps/gawk
   virtual/base
