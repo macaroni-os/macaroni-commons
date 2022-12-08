@@ -24,6 +24,7 @@ prelude:
   app-misc/ca-certificates
   sys-kernel/linux-headers
   sys-devel/bc
+  sys-apps/kmod
   &&
   mkdir -p /etc/portage /tmp &&
   echo "CHOST=\"${ARCH}-pc-linux-gnu\"" > /etc/portage/make.conf &&
