@@ -18,7 +18,9 @@ prelude:
 
 - wget https://golang.org/dl/go{{.Values.golang_version}}.linux-{{.Values.arch}}.tar.gz -O golang.tar.gz
 
-- tar -C /usr/local -xzf golang.tar.gz
+- >-
+  eval 'mkdir -p /usr/local || true' &&
+  tar -C /usr/local -xzf golang.tar.gz
 - |
   mkdir -p /luetbuild/go/src/github.com/u-root && cd /luetbuild/go/src/github.com/u-root && \
   git clone https://github.com/u-root/u-root && cd u-root && git checkout "{{.Values.git_sha}}" -b build
