@@ -69,6 +69,8 @@ steps:
 - find /luetbuild/modules/lib/modules/**/kernel/drivers/nvme  -exec cp {} -r --parents ./modules_copy \;
 - find /luetbuild/modules/lib/modules/**/kernel/drivers/video  -exec cp {} -r --parents ./modules_copy \;
 - find /luetbuild/modules/lib/modules/**/kernel/drivers/vfio  -exec cp {} -r --parents ./modules_copy \;
+# paride kernel driver require parport
+- find /luetbuild/modules/lib/modules/**/kernel/drivers/parport  -exec cp {} -r --parents ./modules_copy \;
 
 # Ethernet + address family: af_packet
 - find /luetbuild/modules/lib/modules/**/kernel/drivers/net/ethernet  -exec cp -r --parents {} ./modules_copy \;
@@ -88,12 +90,18 @@ steps:
 # -files "$(which umount)" \
 # -files "$(which blkid)" \
 # -files "$(which depmod)" \
+
+# u-root losetup implementation has only -d option
+# github.com/u-root/u-root/cmds/core/losetup
+# github.com/u-root/u-root/cmds/core/blkid \
 - |
   cd $GOPATH/src/github.com/u-root/u-root && \
   u-root \
   -files "/luetbuild/loader.sh:loader" \
   -files "/luetbuild/modules_copy/luetbuild/modules/lib/modules:lib/modules" \
   -files "$(which setsid.static):usr/bin/setsid" \
+  -files "$(which losetup.static):sbin/losetup" \
+  -files "$(which blkid.static):sbin/blkid" \
   -files "$(which sh)" \
   -files "$(which bash)" \
   -format=cpio -build=bb -defaultsh="" \
@@ -104,13 +112,12 @@ steps:
   github.com/u-root/u-root/cmds/exp/modprobe \
   github.com/u-root/u-root/cmds/core/cat \
   github.com/u-root/u-root/cmds/core/echo \
+  github.com/u-root/u-root/cmds/core/dmesg \
   github.com/u-root/u-root/cmds/core/chroot \
   github.com/u-root/u-root/cmds/core/ip \
-  github.com/u-root/u-root/cmds/core/losetup \
   github.com/u-root/u-root/cmds/core/switch_root \
   github.com/u-root/u-root/cmds/core/mount \
   github.com/u-root/u-root/cmds/core/umount \
-  github.com/u-root/u-root/cmds/core/blkid \
   github.com/u-root/u-root/cmds/core/mkdir \
   github.com/u-root/u-root/cmds/core/sleep
 

@@ -10,7 +10,6 @@ import (
 	"syscall"
 
 	"github.com/u-root/u-root/pkg/libinit"
-	"github.com/u-root/u-root/pkg/ulog"
 )
 
 type initCmds struct {
@@ -130,9 +129,9 @@ func main() {
 
 	//ic := initCmd()
 
-	if err := ulog.KernelLog.SetConsoleLogLevel(ulog.KLogNotice); err != nil {
-		log.Printf("Could not set log level: %v", err)
-	}
+	//if err := ulog.KernelLog.SetConsoleLogLevel(ulog.KLogNotice); err != nil {
+	//	log.Printf("Could not set log level: %v", err)
+	//}
 
 	// cmdCount := libinit.RunCommands(debug, ic.cmds...)
 	// if cmdCount == 0 {
