@@ -1,0 +1,19 @@
+--- a/sys-utils/Makemodule.am	2022-12-09 12:36:14.738473003 +0000
++++ b/sys-utils/Makemodule.am	2022-12-09 12:37:22.850470141 +0000
+@@ -120,6 +120,16 @@
+ setsid_SOURCES = sys-utils/setsid.c
+ endif
+ 
++if BUILD_SETSID
++if HAVE_STATIC_SETSID
++usrbin_exec_PROGRAMS += setsid.static
++setsid_static_SOURCES = $(setsid_SOURCES)
++setsid_static_LDFLAGS = -all-static
++setsid_static_LDADD = $(setsid_LDADD)
++setsid_static_CFLAGS = $(AM_CFLAGS) -I$(ul_libsmartcols_incdir)
++endif # BUILD_SETSID
++endif
++
+ if BUILD_READPROFILE
+ usrsbin_exec_PROGRAMS += readprofile
+ MANPAGES += sys-utils/readprofile.8

@@ -18,10 +18,16 @@ prelude:
   export FEATURES="-sandbox -usersandbox -ipc-sandbox -pid-sandbox -network-sandbox" &&
   entities merge -e portage --specs-dir /usr/share/macaroni/entities/ &&
   luet repo update &&
-  luet i app-arch/upx-bin sys-apps/kmod sys-apps/which toolchain/meta-repo sys-devel/patch &&
+  luet i app-arch/upx-bin sys-apps/kmod sys-apps/which toolchain/meta-repo sys-devel/patch dev-python/cython sys-libs/timezone-data &&
   luet cleanup --purge-repos &&
   sed -i -e 's|#use static|use static|g' -e 's|+readline|+readline static|g' /var/git/meta-repo/kits/core-kit/app-shells/bash/bash-*.ebuild &&
+  mkdir -p /etc/portage/patches/sys-apps/util-linux/ &&
+  cp -vf util-linux/util-linux-2.38.1.ebuild /var/git/meta-repo/kits/core-kit/sys-apps/util-linux &&
+  cp -vf util-linux/setsid-static.patch /etc/portage/patches/sys-apps/util-linux/ &&
   USE="static-libs tinfo" emerge sys-libs/ncurses -t -j &&
+  USE="static-libs" emerge sys-libs/readline -t -j &&
+  USE="static-libs zstd" emerge sys-apps/kmod -j &&
+  USE="-python" emerge =sys-apps/util-linux-2.38.1 -t -j &&
   USE="static" emerge bash -t -j
 
 - wget https://golang.org/dl/go{{.Values.golang_version}}.linux-{{.Values.arch}}.tar.gz -O golang.tar.gz
@@ -32,10 +38,10 @@ prelude:
 - |
   mkdir -p /luetbuild/go/src/github.com/u-root && cd /luetbuild/go/src/github.com/u-root && \
   git clone https://github.com/u-root/u-root && cd u-root && git checkout "{{.Values.git_sha}}" -b build
-  
+
 - |
    cd /luetbuild/go/src/github.com/u-root/u-root && go build -ldflags '-s -w' && upx --brute -1 u-root && mv u-root /usr/bin/u-root
-   
+
 - mkdir /boot || true
 - rm -rf $GOPATH/src/github.com/u-root/u-root/cmds/core/init
 - cp -rf init $GOPATH/src/github.com/u-root/u-root/cmds/core/init
@@ -75,19 +81,19 @@ steps:
   depmod -a ${PACKAGE_VERSION}-macaroni -b  modules_copy/luetbuild/modules/
 
 # -files "$(which modprobe)" \
+# -files "$(which losetup)" \
+# -files "$(which mkdir)" \
+# -files "$(which switch_root)" \
+# -files "$(which mount)" \
+# -files "$(which umount)" \
+# -files "$(which blkid)" \
+# -files "$(which depmod)" \
 - |
   cd $GOPATH/src/github.com/u-root/u-root && \
   u-root \
   -files "/luetbuild/loader.sh:loader" \
   -files "/luetbuild/modules_copy/luetbuild/modules/lib/modules:lib/modules" \
-  -files "$(which blkid)" \
-  -files "$(which mount)" \
-  -files "$(which umount)" \
-  -files "$(which depmod)" \
-  -files "$(which losetup)" \
-  -files "$(which setsid)" \
-  -files "$(which switch_root)" \
-  -files "$(which mkdir)" \
+  -files "$(which setsid.static):usr/bin/setsid" \
   -files "$(which sh)" \
   -files "$(which bash)" \
   -format=cpio -build=bb -defaultsh="" \
@@ -100,6 +106,12 @@ steps:
   github.com/u-root/u-root/cmds/core/echo \
   github.com/u-root/u-root/cmds/core/chroot \
   github.com/u-root/u-root/cmds/core/ip \
+  github.com/u-root/u-root/cmds/core/losetup \
+  github.com/u-root/u-root/cmds/core/switch_root \
+  github.com/u-root/u-root/cmds/core/mount \
+  github.com/u-root/u-root/cmds/core/umount \
+  github.com/u-root/u-root/cmds/core/blkid \
+  github.com/u-root/u-root/cmds/core/mkdir \
   github.com/u-root/u-root/cmds/core/sleep
 
 - |
