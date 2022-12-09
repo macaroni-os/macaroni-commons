@@ -10,11 +10,19 @@ env:
 package_dir: /initramfs
 prelude:
 
+# Inject bash on initramfs requires that bash is statically linked.
+# To recompile bash it's needed sys-libs/ncurses[static-libs].
+
 - >-
   export LUET_YES=true &&
+  export FEATURES="-sandbox -usersandbox -ipc-sandbox -pid-sandbox -network-sandbox" &&
+  entities merge -e portage --specs-dir /usr/share/macaroni/entities/ &&
   luet repo update &&
-  luet i app-arch/upx-bin sys-apps/kmod sys-apps/which &&
-  luet cleanup --purge-repos
+  luet i app-arch/upx-bin sys-apps/kmod sys-apps/which toolchain/meta-repo sys-devel/patch &&
+  luet cleanup --purge-repos &&
+  sed -i -e 's|#use static|use static|g' -e 's|+readline|+readline static|g' /var/git/meta-repo/kits/core-kit/app-shells/bash/bash-*.ebuild &&
+  USE="static-libs tinfo" emerge sys-libs/ncurses -t -j &&
+  USE="static" emerge bash -t -j
 
 - wget https://golang.org/dl/go{{.Values.golang_version}}.linux-{{.Values.arch}}.tar.gz -O golang.tar.gz
 
