@@ -1,5 +1,5 @@
 // Small Init + Eudev for embedded
-// Author: Ettore Di Giacinto <
+// Based on the original work of Ettore Di Giacinto
 package main
 
 import (
@@ -19,13 +19,50 @@ type initCmds struct {
 var (
 	debug   = func(string, ...interface{}) {}
 	modules = []string{
-		"af_packet", "e1000e", "e1000", "dm_mod", "overlay",
-		"ahci", "virtio_blk", "virtio_pci", "pata_acpi", "ahcpi-plaftorm", "libahcpi-platform", "ata_piix",
-		"ohci_pci", "ehci_pci", "loop", "ext4", "isofs", "squashfs",
-		"ata_generic", "cdrom", "sd_mod", "sr_mod", "ext2", "uas", "usb_storage", "usbcore", "paride",
-		"scsi_mod", "usb_common", "ehci_hcd", "uhci_hcd", "ohci_hcd",
-		"ehci_pci", "xhci_pci", "xhci_hcd", "virtio_blk", "virtio_pci",
-		"part_msdos", "usbms", "usbhid", "hid-generic", "vfat", "nls_iso8859_1", "nls_cp437",
+		"af_packet",
+		"cdrom",
+		"dm_mod",
+		"e1000e",
+		"e1000",
+		"overlay",
+		"ahci",
+		"virtio_blk",
+		"virtio_pci",
+		"pata_acpi",
+		"ahcpi-plaftorm",
+		"libahcpi-platform",
+		"ata_piix",
+		"ohci_pci",
+		"ehci_pci",
+		"loop",
+		"ext4",
+		"isofs",
+		"squashfs",
+		"ata_generic",
+		"sd_mod",
+		"sr_mod",
+		"ext2",
+		"uas",
+		"usb_storage",
+		"usbcore",
+		"usb_common",
+		"ehci_hcd",
+		"uhci_hcd",
+		"ohci_hcd",
+		"paride",
+		"scsi_mod",
+		"ehci_pci",
+		"xhci_pci",
+		"xhci_hcd",
+		"virtio_blk",
+		"virtio_pci",
+		"part_msdos",
+		"usbms",
+		"usbhid",
+		"hid-generic",
+		"vfat",
+		"nls_iso8859_1",
+		"nls_cp437",
 	}
 
 	dirs = []string{"/mnt", "/run"}
@@ -89,30 +126,8 @@ func sysExec() {
 	}
 }
 
-// func initCmd() *initCmds {
-// 	ctty := libinit.WithTTYControl(true)
-
-// 	ensureDirs()
-// 	loadModules()
-
-// 	return &initCmds{
-// 		cmds: []*exec.Cmd{
-// 			//		libinit.Command("/bbin/dhclient", ctty, libinit.WithArguments("-ipv6=false")),
-// 			libinit.Command("/loader", libinit.WithCloneFlags(syscall.CLONE_NEWPID), ctty),
-// 			libinit.Command("/bin/sh", ctty),
-// 		},
-// 	}
-// }
-
 func main() {
-
-	log.SetPrefix("init: ")
-
-	//	debug = log.Printf
-
-	//if err := ulog.KernelLog.SetConsoleLogLevel(ulog.KLogEmergency); err != nil {
-	//	log.Printf("Could not set log level: %v", err)
-	//}
+	log.SetPrefix(">>> ")
 
 	log.Printf("Funtoo Macaroni OS initialization...")
 
@@ -127,22 +142,8 @@ func main() {
 	ensureDirs()
 	loadModules()
 
-	//ic := initCmd()
-
-	//if err := ulog.KernelLog.SetConsoleLogLevel(ulog.KLogNotice); err != nil {
-	//	log.Printf("Could not set log level: %v", err)
-	//}
-
-	// cmdCount := libinit.RunCommands(debug, ic.cmds...)
-	// if cmdCount == 0 {
-	// 	log.Printf("No suitable executable found in %v", ic.cmds)
-	// }
 	sysExec()
 	syscall.Sync()
-
-	//log.Printf("Waiting for orphaned children")
-	//libinit.WaitOrphans()
-	//log.Printf("All commands are done")
 
 	Halt()
 }

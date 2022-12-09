@@ -1,0 +1,19 @@
+--- a/sys-utils/Makemodule.am	2022-12-09 19:24:28.707595100 +0100
++++ b/sys-utils/Makemodule.am	2022-12-09 19:24:20.359595451 +0100
+@@ -502,6 +502,16 @@
+ switch_root_SOURCES = sys-utils/switch_root.c
+ endif
+ 
++if BUILD_SWITCH_ROOT
++if HAVE_STATIC_SWITCH_ROOT
++sbin_PROGRAMS += switch_root.static
++switch_root_static_SOURCES = $(setsid_SOURCES)
++switch_root_static_LDFLAGS = -all-static
++switch_root_static_LDADD = $(setsid_LDADD)
++switch_root_static_CFLAGS = $(AM_CFLAGS) -I$(ul_libsmartcols_incdir)
++endif # BUILD_SWITCH_ROOT
++endif
++
+ if BUILD_UNSHARE
+ usrbin_exec_PROGRAMS += unshare
+ MANPAGES += sys-utils/unshare.1

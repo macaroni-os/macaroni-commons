@@ -68,7 +68,7 @@ pkg_pretend() {
 }
 
 src_prepare() {
-	sed -i -e 's|^m4_define(\[UL_STATIC_PROGRAMS.*|m4_define(\[UL_STATIC_PROGRAMS\], \[blkid, fdisk, losetup, mount, nsenter, sfdisk, umount, unshare, setsid\])|g' \
+	sed -i -e 's|^m4_define(\[UL_STATIC_PROGRAMS.*|m4_define(\[UL_STATIC_PROGRAMS\], \[blkid, fdisk, losetup, mount, nsenter, sfdisk, umount, unshare, setsid, switch_root\])|g' \
 		configure.ac
 
 	default
@@ -131,7 +131,7 @@ src_configure() {
 		$(use_enable unicode widechar)
 		$(use_enable static-libs static)
 		$(use_with ncurses tinfo)
-		--enable-static-programs="blkid,fdisk,losetup,mount,nsenter,sfdisk,umount,unshare,setsid"
+		--enable-static-programs="blkid,fdisk,losetup,mount,nsenter,sfdisk,umount,unshare,setsid,switch_root"
 		$(use_with selinux)
 			--disable-chfn-chsh
 			--disable-login

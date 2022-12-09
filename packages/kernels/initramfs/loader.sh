@@ -1,5 +1,15 @@
 #!/usr/bin/bash
 
+# Set debugloader on kernel command line to enable debug messages.
+
+log() {
+  local msg=$1
+
+  if [ -n "${debugloader}" ] ; then
+    echo -e "$msg"
+  fi
+}
+
 prepare_workarea() {
   mount -t devtmpfs none /dev
   mount -t proc none /proc
@@ -17,7 +27,7 @@ prepare_workarea() {
   mkdir /mnt/sys
   mkdir /mnt/proc
   mkdir /mnt/tmp
-  echo "Created folders for all critical file systems."
+  log "Created folders for all critical file systems."
 }
 
 shell() {
@@ -70,7 +80,7 @@ mount_root() {
 }
 
 search_overlay() {
-  echo "Searching available devices for overlay content."
+  log "Searching available devices for overlay content."
   for DEVICE in /dev/* ; do
     DEV=$(echo "${DEVICE##*/}")
     SYSDEV=$(echo "/sys/class/block/$DEV")
@@ -137,7 +147,7 @@ search_overlay() {
         break
       fi
     else
-      echo -e "  Device \\e[31m$DEVICE\\e[0m has no proper overlay structure."
+      log "  Device \\e[31m$DEVICE\\e[0m has no proper overlay structure."
     fi
 
     # Avoid to run rm -rf if umount fail. We could remove user data.
@@ -183,11 +193,11 @@ switch_system() {
   mount --move /sys /mnt/sys
   mount --move /proc /mnt/proc
   mount --move /tmp /mnt/tmp
-  echo -e "Mount locations \\e[94m/dev\\e[0m, \\e[94m/sys\\e[0m, \\e[94m/tmp\\e[0m and \\e[94m/proc\\e[0m have been moved to \\e[94m/mnt\\e[0m."
+  log "Mount locations \\e[94m/dev\\e[0m, \\e[94m/sys\\e[0m, \\e[94m/tmp\\e[0m and \\e[94m/proc\\e[0m have been moved to \\e[94m/mnt\\e[0m."
 
   #chroot /mnt /usr/bin/yip-init initramfs.after
 
-  echo "Switching from initramfs root area to overlayfs root area."
+  log "Switching from initramfs root area to overlayfs root area."
   exec switch_root /mnt /sbin/init
 }
 
