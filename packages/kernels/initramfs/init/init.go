@@ -1,4 +1,5 @@
-// Small Init + Eudev for embedded
+// Small Init + Eudev for ISO bootstrap.
+// Author: Daniele Rondina, geaaru@funtoo.org
 // Based on the original work of Ettore Di Giacinto
 package main
 
@@ -8,6 +9,7 @@ import (
 	"os/exec"
 	"syscall"
 
+	"github.com/u-root/u-root/pkg/cmdline"
 	"github.com/u-root/u-root/pkg/libinit"
 )
 
@@ -86,14 +88,17 @@ func depmod() (string, error) {
 }
 
 func loadModules() error {
-	// TODO: Report failed kernel modules load to a file available in
-	// runtime /var/log
 	// TODO: run depmod() if no alias file is found
-	out, _ := depmod()
-	log.Println(out)
-	//log.Println("Loading kernel modules", strings.Join(modules, " "))
+	//out, _ := depmod()
+	//log.Println(out)
+
+	c := cmdline.NewCmdLine()
+	debug := c.ContainsFlag("debugloader")
+
 	for _, m := range modules {
-		log.Println("Loading module ", m)
+		if debug {
+			log.Println("Loading module ", m)
+		}
 		modprobe(m) // Skip error and log output for now
 	}
 
@@ -101,7 +106,9 @@ func loadModules() error {
 	drivers := probeKernelModules()
 	//log.Println("Loading detected kernel modules", strings.Join(drivers, " "))
 	for _, k := range drivers {
-		log.Println("Loading probe kernel module ", k)
+		if debug {
+			log.Println("Loading probe kernel module ", k)
+		}
 		modprobe(k) // Skip error and log output for now
 	}
 	return nil

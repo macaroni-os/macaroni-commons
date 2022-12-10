@@ -90,13 +90,13 @@ steps:
 # -files "$(which umount)" \
 # -files "$(which blkid)" \
 # -files "$(which depmod)" \
+#-files "$(which switch_root.static):sbin/switch_root" \
 
 # u-root losetup implementation has only -d option
 # github.com/u-root/u-root/cmds/core/losetup
 # github.com/u-root/u-root/cmds/core/blkid \
 # github.com/u-root/u-root/cmds/core/mount \
 # github.com/u-root/u-root/cmds/core/umount \
-# github.com/u-root/u-root/cmds/core/switch_root \
 - |
   cd $GOPATH/src/github.com/u-root/u-root && \
   u-root \
@@ -107,7 +107,6 @@ steps:
   -files "$(which blkid.static):sbin/blkid" \
   -files "$(which mount.static):bin/mount" \
   -files "$(which umount.static):bin/umount" \
-  -files "$(which switch_root.static):sbin/switch_root" \
   -files "$(which sh)" \
   -files "$(which bash)" \
   -format=cpio -build=bb -defaultsh="" \
@@ -121,6 +120,7 @@ steps:
   github.com/u-root/u-root/cmds/core/dmesg \
   github.com/u-root/u-root/cmds/core/lsmod \
   github.com/u-root/u-root/cmds/core/chroot \
+  github.com/u-root/u-root/cmds/core/switch_root \
   github.com/u-root/u-root/cmds/core/ip \
   github.com/u-root/u-root/cmds/core/mkdir \
   github.com/u-root/u-root/cmds/core/sleep
