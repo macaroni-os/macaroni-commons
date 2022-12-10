@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 
 set -x
 # Set debugloader on kernel command line to enable debug messages.
@@ -62,7 +62,6 @@ parse_cmdline() {
     LABEL=*) eval $root; device=$(blkid -t LABEL=$LABEL -o device) ;;
   esac
 
-  env
 }
 
 shell() {
@@ -192,9 +191,12 @@ switch_system() {
   fi
 
   # Move critical file systems to the new mountpoint.
-  mount --move /dev /mnt/dev
-  mount --move /sys /mnt/sys
-  mount --move /proc /mnt/proc
+  #mount --move /dev /mnt/dev
+  #mount --move /sys /mnt/sys
+  #mount --move /proc /mnt/proc
+  #
+  # /proc, /dev/, /sys, /run are moved by switch_root command
+  #
   mount --move /tmp /mnt/tmp
   log "Mount locations \\e[94m/dev\\e[0m, \\e[94m/sys\\e[0m, \\e[94m/tmp\\e[0m and \\e[94m/proc\\e[0m have been moved to \\e[94m/mnt\\e[0m."
 
