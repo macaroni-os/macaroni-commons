@@ -1,6 +1,6 @@
 category: "app-admin"
 name: "macaronictl"
-version: "0.3.0"
+version: "0.4.0"
 labels:
   github.repo: "funtoo"
   github.owner: "macaronictl"
