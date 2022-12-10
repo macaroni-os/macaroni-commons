@@ -3,10 +3,10 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"os"
 	"os/exec"
-	"strings"
 	"syscall"
 
 	"github.com/u-root/u-root/pkg/libinit"
@@ -31,6 +31,9 @@ var (
 		"pata_acpi",
 		"ahcpi-plaftorm",
 		"libahcpi-platform",
+		"ehci_hcd",
+		"uhci_hcd",
+		"ohci_hcd",
 		"ata_piix",
 		"ohci_pci",
 		"ehci_pci",
@@ -46,9 +49,6 @@ var (
 		"usb_storage",
 		"usbcore",
 		"usb_common",
-		"ehci_hcd",
-		"uhci_hcd",
-		"ohci_hcd",
 		"paride",
 		"scsi_mod",
 		"ehci_pci",
@@ -92,16 +92,20 @@ func loadModules() error {
 	// TODO: run depmod() if no alias file is found
 	out, _ := depmod()
 	log.Println(out)
-	log.Println("Loading kernel modules", strings.Join(modules, " "))
+	//log.Println("Loading kernel modules", strings.Join(modules, " "))
 	for _, m := range modules {
-		modprobe(m) // Skip error and log output for now
+		log.Println("Loading module ", m)
+		out, _ := modprobe(m) // Skip error and log output for now
+		log.Println(out)
 	}
 
 	// probe for modules to load udev-style
 	drivers := probeKernelModules()
-	log.Println("Loading detected kernel modules", strings.Join(drivers, " "))
+	//log.Println("Loading detected kernel modules", strings.Join(drivers, " "))
 	for _, k := range drivers {
-		modprobe(k) // Skip error and log output for now
+		log.Println("Loading probe kernel module ", k)
+		out, _ := modprobe(k) // Skip error and log output for now
+		fmt.Println(out)
 	}
 	return nil
 }

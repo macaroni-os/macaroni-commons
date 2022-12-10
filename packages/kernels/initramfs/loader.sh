@@ -1,5 +1,6 @@
 #!/usr/bin/bash
 
+set -x
 # Set debugloader on kernel command line to enable debug messages.
 
 log() {
@@ -60,6 +61,8 @@ parse_cmdline() {
     UUID=* ) eval $root; device="/dev/disk/by-uuid/$UUID"  ;;
     LABEL=*) eval $root; device=$(blkid -t LABEL=$LABEL -o device) ;;
   esac
+
+  env
 }
 
 shell() {
@@ -208,6 +211,11 @@ DEFAULT_UPPER_DIR="/tmp/minimal/rootfs"
 DEFAULT_WORK_DIR="/tmp/minimal/work"
 
 rootfstype=auto
+
+
+if [ -n "${shell}" ] ; then
+  shell
+fi
 
 # Prepare work area with needed folder structures
 prepare_workarea
