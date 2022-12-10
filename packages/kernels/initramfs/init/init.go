@@ -3,7 +3,6 @@
 package main
 
 import (
-	"fmt"
 	"log"
 	"os"
 	"os/exec"
@@ -95,8 +94,7 @@ func loadModules() error {
 	//log.Println("Loading kernel modules", strings.Join(modules, " "))
 	for _, m := range modules {
 		log.Println("Loading module ", m)
-		out, _ := modprobe(m) // Skip error and log output for now
-		log.Println(out)
+		modprobe(m) // Skip error and log output for now
 	}
 
 	// probe for modules to load udev-style
@@ -104,8 +102,7 @@ func loadModules() error {
 	//log.Println("Loading detected kernel modules", strings.Join(drivers, " "))
 	for _, k := range drivers {
 		log.Println("Loading probe kernel module ", k)
-		out, _ := modprobe(k) // Skip error and log output for now
-		fmt.Println(out)
+		modprobe(k) // Skip error and log output for now
 	}
 	return nil
 }

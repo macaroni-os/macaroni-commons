@@ -1,6 +1,7 @@
 #!/bin/bash
 
-set -x
+#set -x
+
 # Set debugloader on kernel command line to enable debug messages.
 
 log() {
@@ -229,4 +230,6 @@ delay
 mount_system
 
 # Switch to the new system (if found)
-switch_system
+if [ -z "${noswitch}" ] ; then
+  switch_system
+fi

@@ -7,9 +7,9 @@
 +if BUILD_SWITCH_ROOT
 +if HAVE_STATIC_SWITCH_ROOT
 +sbin_PROGRAMS += switch_root.static
-+switch_root_static_SOURCES = $(setsid_SOURCES)
++switch_root_static_SOURCES = $(switch_root_SOURCES)
 +switch_root_static_LDFLAGS = -all-static
-+switch_root_static_LDADD = $(setsid_LDADD)
++switch_root_static_LDADD = $(switch_root_LDADD)
 +switch_root_static_CFLAGS = $(AM_CFLAGS) -I$(ul_libsmartcols_incdir)
 +endif # BUILD_SWITCH_ROOT
 +endif
