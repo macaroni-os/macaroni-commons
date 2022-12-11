@@ -13,16 +13,17 @@ log() {
 }
 
 prepare_workarea() {
-  mount -t devtmpfs none /dev
-  mount -t proc none /proc
-  mount -t tmpfs none /tmp -o mode=1777
-  mount -t sysfs none /sys
+  # This mountpoint are already mounted by u-root
+  #mount -t devtmpfs none /dev >/dev/null 2>&1
+  #mount -t proc none /proc >/dev/null 2>&1
+  #mount -t sysfs none /sys >/dev/null 2>&1
+  #mount -t tmpfs none /tmp -o mode=1777 >/dev/null 2>&1
 
-  mkdir -p /dev/pts
-  mount -t devpts devpts /dev/pts -o gid=5,mode=620,ptmxmode=666
+  #mkdir -p /dev/pts
+  #mount -t devpts devpts /dev/pts -o gid=5,mode=620,ptmxmode=666 2>&1
 
   # Create the new mountpoint in RAM.
-  mount -t tmpfs none /mnt
+  mount -t tmpfs none /mnt 2>&1
 
   # Create folders for all critical file systems.
   mkdir /mnt/dev
