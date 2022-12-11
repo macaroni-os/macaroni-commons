@@ -1,6 +1,9 @@
 name: macaroni-lts-modules
-version: 5.10.156+1
+version: 5.10.156+2
 category: kernel-5.10
+prefix: linux
+arch: "x86_64"
+suffix: macaroni
 provides:
 - name: macaroni-lts-modules
   version: '>=0'
