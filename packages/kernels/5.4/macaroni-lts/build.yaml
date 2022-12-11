@@ -1,21 +1,40 @@
-image: "ubuntu:20.04"
-# TODO: move to macaronios/funtoo-minimal soon.
+image: "macaronios/terragon-minimal-devel:latest-amd64"
 env:
-- GCC_VERSION=10
-- ARCH={{.Values.arch}}
+- ARCH=x86_64
 - KERNEL_PREFIX=vanilla
-- SUFFIX={{ .Values.suffix }}
-- KERNEL_TYPE={{ .Values.prefix }}
+- SUFFIX=macaroni
+- KERNEL_TYPE=linux
 prelude:
-- |
-  apt-get update               && \
-  apt-get -y -q upgrade        && \
-  apt-get install -y -q apt-utils dialog\
-      xz-utils wget sudo aptitude flex bison libncurses5-dev make git exuberant-ctags bc libssl-dev libelf-dev \
-      gcc-${GCC_VERSION} g++-${GCC_VERSION} gcc-${GCC_VERSION}-plugin-dev gcc g++ \
-      gcc-${GCC_VERSION}-aarch64-linux-gnu g++-${GCC_VERSION}-aarch64-linux-gnu \
-      gcc-aarch64-linux-gnu g++-aarch64-linux-gnu && \
-      apt-get install -y -q gcc-${GCC_VERSION}-plugin-dev-aarch64-linux-gnu
+- >-
+  export LUET_YES=true &&
+  luet repo update &&
+  luet i app-arch/zstd app-arch/xz-utils sys-devel/flex
+  sys-devel/bison sys-libs/ncurses sys-devel/make dev-util/kbuild
+  dev-vcs/git dev-libs/openssl dev-libs/elfutils
+  sys-devel-2.36/binutils sys-libs/binutils-libs
+  sys-devel/gcc-config
+  sys-apps/gawk
+  virtual/base
+  sys-apps/diffutils
+  sys-apps/baselayout
+  sys-apps/lsb-release
+  sys-apps/portage
+  net-misc/wget
+  app-misc/ca-certificates
+  sys-kernel/linux-headers
+  sys-devel/bc
+  sys-apps/kmod
+  &&
+  mkdir -p /etc/portage /tmp &&
+  echo "CHOST=\"${ARCH}-pc-linux-gnu\"" > /etc/portage/make.conf &&
+  /usr/bin/gcc-config 1 &&
+  eselect gcc set 1 &&
+  mkdir -p /var/lib/portage &&
+  eval 'rm /etc/localtime || true' &&
+  ln -s /usr/share/zoneinfo/Europe/Rome /etc/localtime &&
+  env-update &&
+  ldconfig &&
+  luet cleanup --purge-repos
 - bash prepare.sh
 steps:
 - bash build.sh
