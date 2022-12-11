@@ -1,6 +1,6 @@
 name: macaroni-lts-minimal
 category: kernel-5.4
-version: 5.4.225
+version: 5.4.225+1
 kernelprefix: kernel-vanilla
 arch: "x86_64"
 suffix: macaroni
