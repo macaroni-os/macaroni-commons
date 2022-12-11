@@ -1,10 +1,10 @@
 name: macaroni-lts-full
-version: 5.10.156+1
+version: 5.10.156+2
 category: kernel-5.10
 requires:
 - name: macaroni-lts-modules
   version: '>=0'
-  category: kernel
+  category: kernel-5.10
 - name: macaronictl
   version: '>=0'
   category: app-admin
