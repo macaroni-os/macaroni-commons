@@ -1,6 +1,6 @@
 name: macaroni-lts-modules
 category: kernel-5.4
-version: 5.4.225
+version: 5.4.225+1
 prefix: linux
 arch: "x86_64"
 suffix: macaroni
