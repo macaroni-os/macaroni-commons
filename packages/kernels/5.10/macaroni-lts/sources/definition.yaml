@@ -1,6 +1,8 @@
 name: macaroni-lts-sources
-version: 5.10.156+1
+version: 5.10.156+2
 category: kernel-5.10
+prefix: linux
+suffix: macaroni
 provides:
 - name: macaroni-lts-sources
   version: '>=0'
