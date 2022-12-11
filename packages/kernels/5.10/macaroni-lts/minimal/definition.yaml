@@ -1,6 +1,10 @@
 name: macaroni-lts-minimal
-version: 5.10.156+1
+version: 5.10.156+2
 category: kernel-5.10
+kernelprefix: kernel-vanilla
+arch: "x86_64"
+suffix: macaroni
+prefix: linux
 requires:
 - name: macaronictl
   version: '>=0'
