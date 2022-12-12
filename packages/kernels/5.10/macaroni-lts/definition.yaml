@@ -1,20 +1,20 @@
 name: macaroni-lts-full
-version: 5.10.156+2
+version: 5.10.158
 category: kernel-5.10
 requires:
-- name: macaroni-lts-modules
-  version: '>=0'
-  category: kernel-5.10
-- name: macaronictl
-  version: '>=0'
-  category: app-admin
-- name: sh
-  version: '>=0'
-  category: virtual
+  - name: macaroni-lts-modules
+    version: '>=0'
+    category: kernel-5.10
+  - name: macaronictl
+    version: '>=0'
+    category: app-admin
+  - name: sh
+    version: '>=0'
+    category: virtual
 provides:
-- name: macaroni-lts-full
-  version: '>=0'
-  category: kernel
+  - name: macaroni-lts-full
+    version: '>=0'
+    category: kernel
 labels:
   autobump.hook: |
     curl -Ls https://kernel.org/releases.json | jq -cr '[ .releases[] | select(.moniker == "longterm") ][0].version'
@@ -24,4 +24,4 @@ labels:
   autobump.string_replace: '{ "prefix": "" }'
   autobump.version_hook: |
     curl -Ls https://kernel.org/releases.json | jq -cr '[ .releases[] | select(.moniker == "longterm") ][0].version'
-  package.version: 5.10.156
+  package.version: 5.10.158
