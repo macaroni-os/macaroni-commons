@@ -1,13 +1,13 @@
 name: macaroni-lts-modules
-version: 5.10.156+2
+version: 5.10.158
 category: kernel-5.10
 prefix: linux
 arch: "x86_64"
 suffix: macaroni
 provides:
-- name: macaroni-lts-modules
-  version: '>=0'
-  category: kernel
+  - name: macaroni-lts-modules
+    version: '>=0'
+    category: kernel
 labels:
   autobump.hook: |
     curl -Ls https://kernel.org/releases.json | jq -cr '[ .releases[] | select(.moniker == "longterm") ][0].version'
@@ -17,4 +17,4 @@ labels:
   autobump.string_replace: '{ "prefix": "" }'
   autobump.version_hook: |
     curl -Ls https://kernel.org/releases.json | jq -cr '[ .releases[] | select(.moniker == "longterm") ][0].version'
-  package.version: 5.10.156
+  package.version: 5.10.158
