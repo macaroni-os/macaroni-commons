@@ -1,3 +1,0 @@
-install:
-- depmod -a {{ index .Values.labels "package.version" }}-macaroni || true
-- if [ -z ${BUILD_ISO} ] ; then  env && PATH="/bin:/sbin:/usr/bin:/usr/sbin" macaronictl kernel gi --set-links --grub --purge --all || true ; fi
