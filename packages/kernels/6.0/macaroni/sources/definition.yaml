@@ -1,0 +1,15 @@
+name: macaroni-sources
+category: kernel-6.0
+version: 6.0.14
+prefix: linux
+suffix: macaroni
+labels:
+  autobump.revdeps: "false"
+  autobump.string_replace: '{ "prefix": "" }'
+  autobump.strategy: "custom"
+  autobump.prefix: "prefix"
+  autobump.hook: |
+    curl -Ls https://kernel.org/releases.json | jq -cr '[ .releases[] | select(.moniker == "longterm") ][0].version'
+  autobump.version_hook: |
+    curl -Ls https://kernel.org/releases.json | jq -cr '[ .releases[] | select(.moniker == "longterm") ][0].version'
+  package.version: 6.0.14
