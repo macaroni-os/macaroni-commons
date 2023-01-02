@@ -3,8 +3,9 @@ packages:
     name: "macaroni-lts-initramfs"
     modules_name: "macaroni-lts-modules"
     version: "5.4.225"
-    git_sha: "v1.0.1"
-    golang_version: "1.19.1"
+    #git_sha: "v1.0.1"
+    git_sha: "16625cddfa907a6886da80acbcc64fb71f331bc3"
+    golang_version: "1.19.4"
     arch: "amd64"
     labels:
       autobump.revdeps: "false"
@@ -27,7 +28,7 @@ packages:
         version: ">=0"
     git_sha: "16625cddfa907a6886da80acbcc64fb71f331bc3"
     #git_sha: "v1.0.1"
-    golang_version: "1.19.3"
+    golang_version: "1.19.4"
     arch: "amd64"
     labels:
       autobump.revdeps: "false"
@@ -46,7 +47,7 @@ packages:
     version: "5.15.86"
     git_sha: "16625cddfa907a6886da80acbcc64fb71f331bc3"
     #git_sha: "v1.0.1"
-    golang_version: "1.19.3"
+    golang_version: "1.19.4"
     arch: "amd64"
     labels:
       package.version: "5.15.86"
