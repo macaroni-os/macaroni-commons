@@ -1,0 +1,2 @@
+install:
+- env && PATH="/bin:/sbin:/usr/bin:/usr/sbin" macaronictl kernel gi --set-links --grub --purge --all || true
