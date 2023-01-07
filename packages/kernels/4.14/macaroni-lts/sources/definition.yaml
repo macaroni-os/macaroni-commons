@@ -1,0 +1,15 @@
+name: macaroni-lts-sources
+category: kernel-4.14
+version: 4.14.302
+prefix: linux
+suffix: macaroni
+labels:
+  autobump.revdeps: "false"
+  autobump.string_replace: '{ "prefix": "" }'
+  autobump.strategy: "custom"
+  autobump.prefix: "prefix"
+  autobump.hook: |
+    curl -Ls https://kernel.org/releases.json | jq -cr '[ .releases[] | select(.moniker == "longterm") ][0].version'
+  autobump.version_hook: |
+    curl -Ls https://kernel.org/releases.json | jq -cr '[ .releases[] | select(.moniker == "longterm") ][0].version'
+  package.version: 4.14.302
