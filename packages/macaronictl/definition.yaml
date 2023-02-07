@@ -2,9 +2,9 @@ category: "app-admin"
 name: "macaronictl"
 version: "0.5.0"
 labels:
-  github.repo: "funtoo"
+  github.repo: "macaroni-os"
   github.owner: "macaronictl"
 description: "Macaroni Linux System Management CLI"
 uri:
-- "https://github.com/funtoo/macaronictl"
+- "https://github.com/macaroni-os/macaronictl"
 license: "GPL-3.0"

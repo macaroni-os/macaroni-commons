@@ -4,7 +4,7 @@ prelude:
 - apt-get install -y git make
 - git clone https://github.com/${GITHUB_ORG}/${PACKAGE_NAME}.git
 env:
-- GITHUB_ORG=funtoo
+- GITHUB_ORG=macaroni-os
 - GIT_HASH=v{{ .Values.version }}
 package_dir: /{{ .Values.name }}
 steps:
