@@ -1,0 +1,14 @@
+category: "app-admin"
+name: "macaronictl-thin"
+version: "0.6.0"
+labels:
+  github.repo: "macaroni-os"
+  github.owner: "macaronictl"
+description: "Macaroni Linux System Management CLI compressed"
+conflicts:
+  - name: macaronictl
+    category: app-admin
+    version: ">=0"
+uri:
+- "https://github.com/macaroni-os/macaronictl"
+license: "GPL-3.0"
