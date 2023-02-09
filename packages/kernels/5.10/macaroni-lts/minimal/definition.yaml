@@ -6,9 +6,9 @@ arch: "x86_64"
 suffix: macaroni
 prefix: linux
 requires:
-  - name: macaronictl
+  - name: ctl
     version: '>=0'
-    category: app-admin
+    category: macaroni
 provides:
   - name: macaroni-lts-minimal
     version: '>=0'
