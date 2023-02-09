@@ -8,3 +8,7 @@ description: "Macaroni Linux System Management CLI"
 uri:
 - "https://github.com/macaroni-os/macaronictl"
 license: "GPL-3.0"
+conflicts:
+  - name: macaronictl-thin
+    category: app-admin
+    version: ">=0"
