@@ -1,6 +1,6 @@
 category: "app-admin"
 name: "macaronictl"
-version: "0.5.0"
+version: "0.6.0"
 labels:
   github.repo: "macaroni-os"
   github.owner: "macaronictl"
