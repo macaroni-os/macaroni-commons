@@ -1,5 +1,5 @@
 name: macaronictl-thin
-version: 0.6.0+1
+version: 0.6.0+2
 category: app-admin
 conflicts:
 - name: macaronictl

@@ -1,7 +1,7 @@
 image: "golang"
 prelude:
 - apt-get update
-- apt-get install -y git make
+- apt-get install -y git make upx
 - git clone https://github.com/${GITHUB_ORG}/${GITHUB_NAME}.git
 env:
 - GITHUB_ORG=macaroni-os
