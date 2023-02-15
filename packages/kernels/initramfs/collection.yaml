@@ -44,11 +44,11 @@ packages:
   - category: "kernel-5.15"
     name: "macaroni-lts-initramfs"
     modules_name: "macaroni-lts-modules"
-    version: "5.15.86+1"
+    version: "5.15.94+1"
     git_sha: "ff9c8884b4a616233eeea068697dfc672c22e2ca"
     #git_sha: "v1.0.1"
     golang_version: "1.19.4"
     arch: "amd64"
     labels:
-      package.version: "5.15.86"
+      package.version: "5.15.94"
 
