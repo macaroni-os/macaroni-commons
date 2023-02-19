@@ -8,6 +8,7 @@ DESTINATION?=$(ROOT_DIR)/output
 COMPRESSION?=zstd
 REPO_NAME?=macaroni-commons
 REPO_EXTRA?=
+REPO?=https://dl.macaronios.org/repos/macaroni-commons/
 CLEAN?=true
 TREE?=./packages
 BUILD_ARGS?= --pull --image-repository quay.io/geaaru/macaroni-commons-amd64-cache --only-target-package
@@ -47,7 +48,7 @@ create-repo:
     --packages $(ROOT_DIR)/build \
     --name "$(REPO_NAME)" \
     --descr "Macaroni Commons $(EXTRA)Official Repository" \
-    --urls "https://cdn.macaroni.funtoo.org/mottainai/$(REPO)" \
+    --urls "$(REPO)" \
     --tree-compression $(COMPRESSION) \
     --tree-filename tree.tar \
     --meta-compression $(COMPRESSION) \
