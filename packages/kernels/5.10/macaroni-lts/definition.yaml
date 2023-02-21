@@ -15,6 +15,13 @@ provides:
   - name: macaroni-lts-full
     version: '>=0'
     category: kernel
+annotations:
+  kernel:
+    lts: true
+    suffix: macaroni
+    eol: "Dec, 2026"
+    released: "2020-12-13"
+    type: vanilla
 labels:
   autobump.hook: |
     curl -Ls https://kernel.org/releases.json | jq -cr '[ .releases[] | select(.moniker == "longterm") ][0].version'

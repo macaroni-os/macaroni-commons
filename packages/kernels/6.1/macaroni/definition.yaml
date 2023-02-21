@@ -18,6 +18,13 @@ requires:
 arch: "x86_64"
 prefix: linux
 suffix: macaroni
+annotations:
+  kernel:
+    lts: true
+    suffix: macaroni
+    eol: "Dec, 2026"
+    released: "2022-12-11"
+    type: vanilla
 labels:
   autobump.revdeps: "false"
   autobump.string_replace: '{ "prefix": "" }'
