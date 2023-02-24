@@ -1,37 +1,34 @@
 name: macaroni-full
+version: 6.2.0+1
 category: kernel-6.2
-version: 6.2.0
-provides:
-  - category: kernel
-    name: macaroni-full
-    version: ">=0"
 requires:
-  - name: "macaroni-modules"
-    category: "kernel-6.2"
-    version: ">=0"
-  - category: "macaroni"
-    name: "ctl"
-    version: ">=0"
-  - category: "virtual"
-    name: "sh"
-    version: ">=0"
-arch: "x86_64"
-prefix: linux
-suffix: macaroni
+- name: macaroni-modules
+  version: '>=0'
+  category: kernel-6.2
+- name: ctl
+  version: '>=0'
+  category: macaroni
+- name: sh
+  version: '>=0'
+  category: virtual
+provides:
+- name: macaroni-full
+  version: '>=0'
+  category: kernel
 annotations:
   kernel:
+    eol: N/A
     lts: false
-    suffix: macaroni
-    eol: "N/A"
     released: "2023-02-19"
+    suffix: macaroni
     type: vanilla
 labels:
-  autobump.revdeps: "false"
-  autobump.string_replace: '{ "prefix": "" }'
-  autobump.strategy: "custom"
-  autobump.prefix: "prefix"
   autobump.hook: |
     curl -Ls https://kernel.org/releases.json | jq -cr '[ .releases[] | select(.moniker == "longterm") ][0].version'
+  autobump.prefix: prefix
+  autobump.revdeps: "false"
+  autobump.strategy: custom
+  autobump.string_replace: '{ "prefix": "" }'
   autobump.version_hook: |
     curl -Ls https://kernel.org/releases.json | jq -cr '[ .releases[] | select(.moniker == "longterm") ][0].version'
   package.version: "6.2"
