@@ -1,8 +1,11 @@
-category: "extension"
+category: "macaroni"
 name: "luet-portage-converter"
-version: "0.10.7"
+version: "0.11.0"
 license: "GPL-3.0"
+provides:
+  - category: extension
+    name: "luet-portage-converter"
+    version: "0.11.0"
 labels:
   github.repo: "luet-portage-converter"
   github.owner: "geaaru"
-

@@ -1,12 +1,13 @@
-image: "golang"
+image: macaronios/terragon-minimal:latest-amd64
 prelude:
-- apt-get update
-- apt-get install -y git make
-- git clone https://github.com/${GITHUB_ORG}/${PACKAGE_NAME}.git
+- >-
+  luet repo update &&
+  luet i -y upx-bin git make go virtual/base &&
+  mkdir /tmp &&
+  git clone https://github.com/${GITHUB_ORG}/${PACKAGE_NAME}.git
 env:
 - GITHUB_ORG=geaaru
 - GIT_HASH=v{{ .Values.version }}
-- LUET_YES=true
 package_dir: /{{ .Values.name }}
 steps:
 - >-
