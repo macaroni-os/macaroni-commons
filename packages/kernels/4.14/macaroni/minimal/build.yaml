@@ -2,7 +2,7 @@ steps:
 - cp -rfv output/boot/* /luetbuild/modules/boot
 package_dir: /luetbuild/modules
 requires:
-- name: "macaroni-lts-modules"
+- name: "macaroni-modules"
   category: "kernel-4.14"
   version: ">=0"
 includes:

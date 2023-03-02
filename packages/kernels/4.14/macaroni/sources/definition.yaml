@@ -1,8 +1,12 @@
-name: macaroni-lts-sources
+name: macaroni-sources
 category: kernel-4.14
 version: 4.14.305
 prefix: linux
 suffix: macaroni
+provides:
+  - category: kernel-4.14
+    name: macaroni-lts-sources
+    version: "4.14.305"
 labels:
   autobump.revdeps: "false"
   autobump.string_replace: '{ "prefix": "" }'

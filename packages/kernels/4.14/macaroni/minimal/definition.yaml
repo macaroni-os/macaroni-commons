@@ -1,10 +1,14 @@
-name: macaroni-lts-minimal
+name: macaroni-minimal
 category: kernel-4.14
 version: 4.14.305
 kernelprefix: kernel-vanilla
 arch: "x86_64"
 suffix: macaroni
 prefix: linux
+provides:
+  - category: kernel-4.14
+    name: macaroni-lts-minimal
+    version: "4.14.305"
 requires:
   - category: macaroni
     name: ctl
