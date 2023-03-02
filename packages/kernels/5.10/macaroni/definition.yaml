@@ -1,4 +1,4 @@
-name: macaroni-lts-full
+name: macaroni-full
 version: 5.10.168
 category: kernel-5.10
 requires:
@@ -13,8 +13,11 @@ requires:
     category: virtual
 provides:
   - name: macaroni-lts-full
-    version: '>=0'
+    version: '5.10.168'
     category: kernel
+  - name: macaroni-lts-full
+    version: '5.10.168'
+    category: kernel-5.10
 annotations:
   kernel:
     lts: true

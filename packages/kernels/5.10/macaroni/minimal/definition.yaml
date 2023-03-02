@@ -1,4 +1,4 @@
-name: macaroni-lts-minimal
+name: macaroni-minimal
 version: 5.10.168
 category: kernel-5.10
 kernelprefix: kernel-vanilla
@@ -11,7 +11,13 @@ requires:
     category: macaroni
 provides:
   - name: macaroni-lts-minimal
-    version: '>=0'
+    version: '5.10.168'
+    category: kernel
+  - name: macaroni-lts-minimal
+    version: '5.10.168'
+    category: kernel-5.10
+  - name: macaroni-minimal
+    version: '5.10.168'
     category: kernel
 labels:
   autobump.hook: |

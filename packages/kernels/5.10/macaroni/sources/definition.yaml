@@ -1,12 +1,15 @@
-name: macaroni-lts-sources
+name: macaroni-sources
 version: 5.10.168
 category: kernel-5.10
 prefix: linux
 suffix: macaroni
 provides:
   - name: macaroni-lts-sources
-    version: '>=0'
+    version: '5.10.168'
     category: kernel
+  - name: macaroni-lts-sources
+    version: '5.10.168'
+    category: kernel-5.10
 labels:
   autobump.hook: |
     curl -Ls https://kernel.org/releases.json | jq -cr '[ .releases[] | select(.moniker == "longterm") ][0].version'

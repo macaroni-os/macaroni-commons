@@ -1,4 +1,4 @@
-name: macaroni-lts-modules
+name: macaroni-modules
 version: 5.10.168
 category: kernel-5.10
 prefix: linux
@@ -6,8 +6,11 @@ arch: "x86_64"
 suffix: macaroni
 provides:
   - name: macaroni-lts-modules
-    version: '>=0'
+    version: '5.10.168'
     category: kernel
+  - name: macaroni-lts-modules
+    version: '5.10.168'
+    category: kernel-5.10
 labels:
   autobump.hook: |
     curl -Ls https://kernel.org/releases.json | jq -cr '[ .releases[] | select(.moniker == "longterm") ][0].version'
