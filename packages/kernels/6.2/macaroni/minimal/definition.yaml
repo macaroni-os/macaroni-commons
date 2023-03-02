@@ -1,14 +1,14 @@
 name: macaroni-minimal
-version: 6.2.0+1
+version: 6.2.1
 category: kernel-6.2
 kernelprefix: kernel-vanilla
 arch: "x86_64"
 suffix: macaroni
 prefix: linux
 requires:
-- name: ctl
-  version: '>=0'
-  category: macaroni
+  - name: ctl
+    version: '>=0'
+    category: macaroni
 labels:
   autobump.hook: |
     curl -Ls https://kernel.org/releases.json | jq -cr '[ .releases[] | select(.moniker == "longterm") ][0].version'
@@ -18,4 +18,4 @@ labels:
   autobump.string_replace: '{ "prefix": "" }'
   autobump.version_hook: |
     curl -Ls https://kernel.org/releases.json | jq -cr '[ .releases[] | select(.moniker == "longterm") ][0].version'
-  package.version: 6.2.0
+  package.version: 6.2.1
