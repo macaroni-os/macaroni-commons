@@ -5,7 +5,7 @@ env:
 - SUFFIX={{ .Values.suffix }}
 package_dir: /luetbuild/sources
 requires:
-- name: "macaroni-lts-full"
+- name: "macaroni-full"
   category: "kernel-5.15"
   version: ">=0"
 excludes:

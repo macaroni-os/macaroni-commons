@@ -1,10 +1,14 @@
-name: macaroni-lts-minimal
+name: macaroni-minimal
 category: kernel-5.15
 version: 5.15.94
 kernelprefix: kernel-vanilla
 arch: "x86_64"
 suffix: macaroni
 prefix: linux
+provides:
+  - name: macaroni-lts-minimal
+    category: kernel-5.15
+    version: 5.15.94
 requires:
   - category: macaroni
     name: ctl
