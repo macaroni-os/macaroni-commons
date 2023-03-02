@@ -1,9 +1,13 @@
-name: macaroni-lts-modules
+name: macaroni-modules
 category: kernel-5.4
 version: 5.4.231
 prefix: linux
 arch: "x86_64"
 suffix: macaroni
+provides:
+  - name: macaroni-lts-modules
+    category: kernel-5.4
+    version: 5.4.231
 labels:
   autobump.revdeps: "false"
   autobump.string_replace: '{ "prefix": "" }'

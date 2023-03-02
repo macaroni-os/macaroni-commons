@@ -1,26 +1,18 @@
-name: macaroni-lts-full
+name: macaroni-minimal
 category: kernel-5.4
 version: 5.4.231
-requires:
-  - name: "macaroni-lts-modules"
-    category: "kernel-5.4"
-    version: ">=0"
-  - category: "macaroni"
-    name: "ctl"
-    version: ">=0"
-  - category: "virtual"
-    name: "sh"
-    version: ">=0"
+kernelprefix: kernel-vanilla
 arch: "x86_64"
-prefix: linux
 suffix: macaroni
-annotations:
-  kernel:
-    lts: true
-    suffix: macaroni
-    eol: "Dec, 2025"
-    released: "2019-11-24"
-    type: vanilla
+prefix: linux
+provides:
+  - name: macaroni-lts-minimal
+    category: kernel-5.4
+    version: 5.4.231
+requires:
+  - category: macaroni
+    name: ctl
+    version: ">=0"
 labels:
   autobump.revdeps: "false"
   autobump.string_replace: '{ "prefix": "" }'
