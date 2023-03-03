@@ -1,9 +1,9 @@
 name: luet-portage-converter
-version: 0.11.1+1
+version: 0.11.2
 category: macaroni
 provides:
 - name: luet-portage-converter
-  version: 0.11.1
+  version: 0.11.2
   category: extension
 license: GPL-3.0
 labels:
