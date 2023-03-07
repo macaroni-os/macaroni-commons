@@ -1,5 +1,5 @@
 name: macaronictl-thin
-version: 0.7.0
+version: 0.7.1
 category: app-admin
 conflicts:
 - name: macaronictl
@@ -7,7 +7,7 @@ conflicts:
   category: app-admin
 provides:
 - name: ctl
-  version: 0.7.0
+  version: 0.7.1
   category: macaroni
 description: Macaroni Linux System Management CLI compressed
 uri:
