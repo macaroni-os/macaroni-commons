@@ -1,6 +1,6 @@
 category: "app-admin"
 name: "macaronictl"
-version: "0.7.1"
+version: "0.8.0"
 labels:
   github.repo: "macaroni-os"
   github.owner: "macaronictl"
@@ -11,7 +11,7 @@ license: "GPL-3.0"
 provides:
   - name: ctl
     category: macaroni
-    version: "0.7.1"
+    version: "0.8.0"
 conflicts:
   - name: macaronictl-thin
     category: app-admin
