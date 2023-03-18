@@ -5,7 +5,6 @@ steps:
   luet upgrade -y &&
   luet i --sync-repos utils/jq utils/yq -y &&
   luet cleanup &&
-  mkdir /tmp &&
   mkdir /{{ .Values.name }}/usr/share/macaroni/entities -p &&
   TARGET_DIR=/{{ .Values.name }}/usr/share/macaroni/entities/
   bash scripts/generator.sh
