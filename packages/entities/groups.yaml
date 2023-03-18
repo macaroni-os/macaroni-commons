@@ -2366,7 +2366,6 @@ groups:
     gshadow:
       password: "!"
 
-
   fvwm-crystal:
     gid: 232
     password: x
@@ -6210,6 +6209,21 @@ groups:
       uid: 509
       gid: 509
       info: "SNMP Notifier Application"
+      homedir: /dev/null
+      shell: /sbin/nologin
+      password: x
+    shadow:
+      password: "!"
+    gshadow:
+      password: "!"
+
+  mattermost:
+    gid: 510
+    password: x
+    user:
+      uid: 510
+      gid: 510
+      info: "Mattermost Application"
       homedir: /dev/null
       shell: /sbin/nologin
       password: x
