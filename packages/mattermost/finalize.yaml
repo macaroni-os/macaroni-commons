@@ -1,0 +1,4 @@
+install:
+- macaronictl env-update || true
+uninstall:
+- macaronictl env-update || true
