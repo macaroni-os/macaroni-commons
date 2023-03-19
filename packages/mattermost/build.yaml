@@ -1,0 +1,24 @@
+image: "macaronios/terragon-minimal:latest-amd64"
+prelude:
+# Temporary add macaroni-commons-dev to get new entities-catalog
+- >-
+  luet repo update &&
+  luet i -y repository/macaroni-commons-dev &&
+  luet repo update --force &&
+  luet upgrade -y &&
+  luet i wget tar ca-certificates -y &&
+  wget https://releases.mattermost.com/${MM_VERSION}/mattermost-${MM_VERSION}-linux-amd64.tar.gz &&
+  tar -xzf mattermost*.gz &&
+  entities merge --specs-dir /usr/share/macaroni/entities/ -e mattermost &&
+  mkdir -p /{{ .Values.name }}/opt/ &&
+  mkdir -p /{{ .Values.name }}/etc/env.d/ &&
+  mkdir -p /{{ .Values.name }}/lib/systemd/system/ &&
+  cp mattermost.service /{{ .Values.name }}/lib/systemd/system/ &&
+  mv mattermost /{{ .Values.name }}/opt/ &&
+  mkdir -p /{{ .Values.name }}/opt/mattermost/data/ &&
+  chown mattermost:mattermost -R /{{ .Values.name }}/opt/mattermost/ &&
+  chmod -R g+w /{{ .Values.name }}/opt/mattermost/ &&
+  cp 30mattermost.env.d /{{ .Values.name }}/etc/env.d/30mattermost
+env:
+- MM_VERSION={{ ( index .Values.labels "original.package.version" ) }}
+package_dir: /{{ .Values.name }}
