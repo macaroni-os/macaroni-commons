@@ -233,4 +233,6 @@ mount_system
 # Switch to the new system (if found)
 if [ -z "${noswitch}" ] ; then
   switch_system
+else
+  shell
 fi
