@@ -1,6 +1,6 @@
 category: "macaroni"
 name: "pageant"
-version: "0.0.1-alpha"
+version: "0.0.1_alpha"
 labels:
   github.repo: "pageant"
   github.owner: "macaroni-os"
