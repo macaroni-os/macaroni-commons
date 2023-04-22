@@ -1,0 +1,36 @@
+image: "macaronios/phoenix-minimal-devel:latest-amd64"
+package_dir: /{{ .Values.name }}
+prelude:
+# NOTE: We drop using of dev repos when there is a new tag.
+- >-
+  luet repo update &&
+  luet i -y
+  repository/macaroni-commons-dev
+  repository/macaroni-funtoo-dev &&
+  luet repo update &&
+  luet upgrade -y --force &&
+  luet i -y elt-patches patch autoconf-archive gcc-config
+  diffutils binutils binutils-libs binutils-config sandbox
+  which wget make git portage
+  sys-apps/baselayout lazarus fpc
+  whip whip-catalog whip-profiles/macaroni &&
+  /usr/bin/gcc-config 1 &&
+  binutils-config 1 &&
+  source /etc/profile &&
+  locale-gen &&
+  eselect gcc set 1 &&
+  macaronictl env-update &&
+  luet cleanup --purge-repos
+- >-
+  export GITHUB_ORG={{ ( index .Values.labels "github.owner" ) }} &&
+  export GIT_HASH={{ ( index .Values.labels "hash" ) }} &&
+  git clone https://github.com/${GITHUB_ORG}/${PACKAGE_NAME}.git &&
+  cd ${PACKAGE_NAME} &&
+  git checkout ${GIT_HASH}
+
+steps:
+- >-
+  cd ${PACKAGE_NAME} &&
+  make build &&
+  mkdir -p /{{ .Values.name }}/usr/bin &&
+  cp ./pageant /{{ .Values.name }}/usr/bin

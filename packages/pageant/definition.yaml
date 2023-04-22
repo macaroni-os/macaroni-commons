@@ -1,0 +1,11 @@
+category: "macaroni"
+name: "pageant"
+version: "0.0.1-alpha"
+labels:
+  github.repo: "pageant"
+  github.owner: "macaroni-os"
+  hash: "8accc14506787e73635f689044e91f76593deb29"
+description: "A Macaroni OS PMS GUI"
+uri:
+- "https://github.com/macaroni-os/pageant"
+license: "GPL-3.0"
