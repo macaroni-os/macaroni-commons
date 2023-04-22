@@ -9,7 +9,7 @@ packages:
         name: "macaroni-lts-initramfs"
     #git_sha: "v1.0.1"
     git_sha: "ff9c8884b4a616233eeea068697dfc672c22e2ca"
-    golang_version: "1.19.5"
+    golang_version: "1.19.8"
     arch: "amd64"
     labels:
       package.version: "5.4.241"
@@ -27,7 +27,7 @@ packages:
         version: "5.10.178"
     git_sha: "ff9c8884b4a616233eeea068697dfc672c22e2ca"
     #git_sha: "v1.0.1"
-    golang_version: "1.19.5"
+    golang_version: "1.19.8"
     arch: "amd64"
     labels:
       package.version: "5.10.178"
@@ -42,7 +42,7 @@ packages:
         version: "5.15.108"
     git_sha: "ff9c8884b4a616233eeea068697dfc672c22e2ca"
     #git_sha: "v1.0.1"
-    golang_version: "1.19.5"
+    golang_version: "1.19.8"
     arch: "amd64"
     labels:
       package.version: "5.15.108"
@@ -53,7 +53,7 @@ packages:
     version: "6.1.25"
     git_sha: "ff9c8884b4a616233eeea068697dfc672c22e2ca"
     #git_sha: "v1.0.1"
-    golang_version: "1.19.5"
+    golang_version: "1.19.8"
     arch: "amd64"
     labels:
       package.version: "6.1.25"
@@ -64,7 +64,7 @@ packages:
     version: "6.2.12"
     git_sha: "ff9c8884b4a616233eeea068697dfc672c22e2ca"
     #git_sha: "v1.0.1"
-    golang_version: "1.19.5"
+    golang_version: "1.19.8"
     arch: "amd64"
     labels:
       package.version: "6.2.12"
