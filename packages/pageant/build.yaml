@@ -32,5 +32,4 @@ steps:
 - >-
   cd ${PACKAGE_NAME} &&
   make build &&
-  mkdir -p /{{ .Values.name }}/usr/bin &&
-  cp ./pageant /{{ .Values.name }}/usr/bin
+  DESTDIR=/{{ .Values.name }} make install
