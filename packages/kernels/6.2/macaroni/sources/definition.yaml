@@ -1,5 +1,5 @@
 name: macaroni-sources
-version: 6.2.9
+version: 6.2.12
 category: kernel-6.2
 prefix: linux
 suffix: macaroni
@@ -12,4 +12,4 @@ labels:
   autobump.string_replace: '{ "prefix": "" }'
   autobump.version_hook: |
     curl -Ls https://kernel.org/releases.json | jq -cr '[ .releases[] | select(.moniker == "longterm") ][0].version'
-  package.version: 6.2.9
+  package.version: 6.2.12
