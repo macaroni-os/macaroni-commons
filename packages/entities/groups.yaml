@@ -6239,7 +6239,7 @@ groups:
       uid: 511
       gid: 511
       info: "Apache Karaf Application"
-      homedir: /dev/null
+      homedir: /var/lib/karaf
       shell: /sbin/nologin
       password: x
     shadow:
