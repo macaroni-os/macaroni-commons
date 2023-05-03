@@ -6232,6 +6232,21 @@ groups:
     gshadow:
       password: "!"
 
+  karaf:
+    gid: 511
+    password: x
+    user:
+      uid: 511
+      gid: 511
+      info: "Apache Karaf Application"
+      homedir: /dev/null
+      shell: /sbin/nologin
+      password: x
+    shadow:
+      password: "!"
+    gshadow:
+      password: "!"
+
   nogroup:
     gid: 65533
     # TODO: to check
