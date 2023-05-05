@@ -1,0 +1,34 @@
+name: macaroni-full
+version: 6.3.1
+category: kernel-6.3
+requires:
+  - name: macaroni-modules
+    version: '>=0'
+    category: kernel-6.3
+  - name: ctl
+    version: '>=0'
+    category: macaroni
+  - name: sh
+    version: '>=0'
+    category: virtual
+provides:
+  - name: macaroni-full
+    version: '>=0'
+    category: kernel
+annotations:
+  kernel:
+    eol: N/A
+    lts: false
+    released: "2023-04-23"
+    suffix: macaroni
+    type: vanilla
+labels:
+  autobump.hook: |
+    curl -Ls https://kernel.org/releases.json | jq -cr '[ .releases[] | select(.moniker == "longterm") ][0].version'
+  autobump.prefix: prefix
+  autobump.revdeps: "false"
+  autobump.strategy: custom
+  autobump.string_replace: '{ "prefix": "" }'
+  autobump.version_hook: |
+    curl -Ls https://kernel.org/releases.json | jq -cr '[ .releases[] | select(.moniker == "longterm") ][0].version'
+  package.version: 6.3.1
