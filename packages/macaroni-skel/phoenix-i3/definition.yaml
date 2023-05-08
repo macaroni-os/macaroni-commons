@@ -1,0 +1,11 @@
+name: skel-phoenix-i3
+version: "0.20230508"
+category: macaroni
+requires:
+- name: skel-phoenix
+  version: '>=0'
+  category: macaroni
+description: Macaroni Phoenix Skel Files for I3
+uri:
+- https://github.com/funtoo/macaroni-commons
+license: GPL-3.0
