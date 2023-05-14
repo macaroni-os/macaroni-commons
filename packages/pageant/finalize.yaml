@@ -1,0 +1,2 @@
+install:
+- whip h gtk.glib_update_schemas gtk.mime_update_db gtk.gtk_update_icons || true
