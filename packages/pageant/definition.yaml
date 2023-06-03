@@ -1,10 +1,10 @@
 category: "macaroni"
 name: "pageant"
-version: "0.0.5_alpha"
+version: "0.0.6_alpha"
 labels:
   github.repo: "pageant"
   github.owner: "macaroni-os"
-  hash: "v0.0.5_alpha"
+  hash: "v0.0.6_alpha"
 description: "A Macaroni OS PMS GUI"
 uri:
 - "https://github.com/macaroni-os/pageant"
