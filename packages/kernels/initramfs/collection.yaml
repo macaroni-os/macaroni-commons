@@ -5,7 +5,7 @@ packages:
     version: "5.4.247+2"
     provides:
       - category: "kernel-5.4"
-        version: "5.4.247+2"
+        version: "5.4.247+3"
         name: "macaroni-lts-initramfs"
     #git_sha: "v1.0.1"
     git_sha: "ff9c8884b4a616233eeea068697dfc672c22e2ca"
@@ -35,11 +35,11 @@ packages:
   - category: "kernel-5.15"
     name: "macaroni-initramfs"
     modules_name: "macaroni-modules"
-    version: "5.15.117+2"
+    version: "5.15.117+3"
     provides:
       - category: "kernel-5.15"
         name: "macaroni-lts-initramfs"
-        version: "5.15.117"
+        version: "5.15.117+3"
     git_sha: "ff9c8884b4a616233eeea068697dfc672c22e2ca"
     #git_sha: "v1.0.1"
     golang_version: "1.19.8"

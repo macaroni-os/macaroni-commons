@@ -23,8 +23,8 @@ prelude:
   sed -i -e 's|#use static|use static|g' -e 's|+readline|+readline static|g' /var/git/meta-repo/kits/core-kit/app-shells/bash/bash-*.ebuild &&
   mkdir -p /etc/portage/patches/sys-apps/util-linux/ &&
   rm -vf /var/git/meta-repo/kits/core-kit/sys-apps/util-linux/*.ebuild &&
-  cd /var/git/meta-repo/kits/core-kit/sys-apps/util-linux/ && ebuild util-linux-2.38.1.ebuild digest && cd - &&
   cp -vf util-linux/util-linux-2.38.1.ebuild /var/git/meta-repo/kits/core-kit/sys-apps/util-linux &&
+  cd /var/git/meta-repo/kits/core-kit/sys-apps/util-linux/ && ebuild util-linux-2.38.1.ebuild digest && cd - &&
   cp -vf util-linux/*.patch /etc/portage/patches/sys-apps/util-linux/ &&
   USE="static-libs tinfo" emerge sys-libs/ncurses -t -j &&
   USE="static-libs" emerge sys-libs/readline -t -j &&
