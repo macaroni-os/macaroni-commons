@@ -7,5 +7,5 @@ requires:
   category: macaroni
 description: Macaroni Phoenix Skel Files for I3
 uri:
-- https://github.com/funtoo/macaroni-commons
+- https://github.com/macaroni-os/macaroni-commons
 license: GPL-3.0

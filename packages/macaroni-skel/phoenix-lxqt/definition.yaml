@@ -14,5 +14,5 @@ requires:
 #  category: x11-themes
 description: Macaroni Phoenix Skel Files for LXQt
 uri:
-- https://github.com/funtoo/macaroni-commons
+- https://github.com/macaroni-os/macaroni-commons
 license: GPL-3.0

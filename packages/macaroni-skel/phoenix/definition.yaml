@@ -3,5 +3,5 @@ version: "0.20221014"
 category: macaroni
 description: Macaroni Phoenix Skel Files
 uri:
-- https://github.com/funtoo/macaroni-commons
+- https://github.com/macaroni-os/macaroni-commons
 license: GPL-3.0
