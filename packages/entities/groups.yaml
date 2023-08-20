@@ -6247,6 +6247,12 @@ groups:
     gshadow:
       password: "!"
 
+  incus:
+    gid: 512
+    password: x
+    gshadow:
+      password: "!"
+
   nogroup:
     gid: 65533
     # TODO: to check
