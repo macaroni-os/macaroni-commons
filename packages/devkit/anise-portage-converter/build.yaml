@@ -6,7 +6,7 @@ prelude:
   mkdir /tmp &&
   git clone https://github.com/${GITHUB_ORG}/${PACKAGE_NAME}.git
 env:
-- GITHUB_ORG=geaaru
+- GITHUB_ORG={{ ( index .Values.labels "github.owner" ) }}
 - GIT_HASH=v{{ .Values.version }}
 package_dir: /{{ .Values.name }}
 steps:
