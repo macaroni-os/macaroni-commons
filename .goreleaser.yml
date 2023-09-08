@@ -1,9 +1,9 @@
-project_name: Funtoo Macaroni Commons
+project_name: Macaroni OS Commons
 build:
   skip: true
 release:
   header: |
-    ## Funtoo Macaroni Commons {{ .Tag }}!
+    ## Macaroni OS Commons {{ .Tag }}!
 
 changelog:
   sort: asc
