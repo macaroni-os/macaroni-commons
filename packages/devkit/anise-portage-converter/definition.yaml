@@ -1,0 +1,11 @@
+name: anise-portage-converter
+version: 0.13.0
+category: macaroni
+provides:
+- name: luet-portage-converter
+  version: 0.13.0
+  category: macaroni
+license: GPL-3.0
+labels:
+  github.owner: macaroni-os
+  github.repo: anise-portage-converter
