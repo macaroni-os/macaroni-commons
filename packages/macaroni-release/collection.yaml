@@ -8,9 +8,13 @@ packages:
       name: funtoo
       version: "2"
 - category: "macaroni-release"
-  name: "funtoo-systemd"
+  name: "eagle"
   release: "eagle"
-  version: "2"
+  version: "3"
+  provides:
+    - category: macaroni-release
+      name: funtoo-systemd
+      version: "3"
 - category: "macaroni-release"
   name: "terragon"
   release: "terragon"
