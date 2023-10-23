@@ -137,7 +137,7 @@ func sysExec() {
 func main() {
 	log.SetPrefix(">>> ")
 
-	log.Printf("Funtoo Macaroni OS initialization...")
+	log.Printf("Macaroni OS initialization...")
 
 	libinit.SetEnv()
 	// CreateRootfs creates a symlink to /dev/pts/ptmx
