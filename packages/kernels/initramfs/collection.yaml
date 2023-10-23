@@ -50,13 +50,13 @@ packages:
   - category: "kernel-6.1"
     name: "macaroni-initramfs"
     modules_name: "macaroni-modules"
-    version: "6.1.49+1"
+    version: "6.1.59"
     git_sha: "ff9c8884b4a616233eeea068697dfc672c22e2ca"
     #git_sha: "v1.0.1"
     golang_version: "1.19.8"
     arch: "amd64"
     labels:
-      package.version: "6.1.49"
+      package.version: "6.1.59"
 
   - category: "kernel-6.3"
     name: "macaroni-initramfs"
