@@ -529,6 +529,7 @@ groups:
       shell: /sbin/nologin
       homedir: /dev/null
       password: x
+      group: "nut,uucp"
     shadow:
       password: "!"
     gshadow:
@@ -542,7 +543,7 @@ groups:
       uid: 84
       gid: 84
       shell: /sbin/nologin
-      homedir: /dev/null
+      homedir: /var/lib/nut
       password: x
     shadow:
       password: "!"
