@@ -534,6 +534,21 @@ groups:
     gshadow:
       password: "!"
 
+  nut:
+    gid: 84
+    password: x
+    user:
+      info: "Nginx user"
+      uid: 84
+      gid: 84
+      shell: /sbin/nologin
+      homedir: /dev/null
+      password: x
+    shadow:
+      password: "!"
+    gshadow:
+      password: "!"
+
   usb:
     gid: 85
     password: x
