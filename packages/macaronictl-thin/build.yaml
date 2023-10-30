@@ -1,7 +1,8 @@
-image: "golang"
+image: macaronios/terragon-testing-minimal:latest-amd64
 prelude:
-- apt-get update
-- apt-get install -y git make upx
+- >-
+  luet i -y --sync-repos --purge-repos make upx-bin go ca-certificates git &&
+  mkdir /tmp/ &&
 - git clone https://github.com/${GITHUB_ORG}/${GITHUB_NAME}.git
 env:
 - GITHUB_ORG=macaroni-os
