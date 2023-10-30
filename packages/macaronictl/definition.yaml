@@ -1,6 +1,6 @@
 category: "app-admin"
 name: "macaronictl"
-version: "0.8.0"
+version: "0.9.0"
 labels:
   github.repo: "macaroni-os"
   github.owner: "macaronictl"
@@ -8,10 +8,15 @@ description: "Macaroni Linux System Management CLI"
 uri:
 - "https://github.com/macaroni-os/macaronictl"
 license: "GPL-3.0"
+annotations:
+  subsets:
+    rules:
+      desktop:
+        - ^/usr/share/
 provides:
   - name: ctl
     category: macaroni
-    version: "0.8.0"
+    version: "0.9.0"
 conflicts:
   - name: macaronictl-thin
     category: app-admin
