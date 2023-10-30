@@ -1,9 +1,9 @@
 image: macaronios/terragon-testing-minimal:latest-amd64
 prelude:
 - >-
-  luet i -y --sync-repos --purge-repos make upx-bin go ca-certificates git &&
+  luet i -y --sync-repos --purge-repos --cleanup make upx-bin go ca-certificates git &&
   mkdir /tmp/ &&
-- git clone https://github.com/${GITHUB_ORG}/${GITHUB_NAME}.git
+  git clone https://github.com/${GITHUB_ORG}/${GITHUB_NAME}.git
 env:
 - GITHUB_ORG=macaroni-os
 - GITHUB_NAME={{ ( index .Values.labels "github.owner" ) }}
