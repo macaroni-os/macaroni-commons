@@ -17,7 +17,7 @@ provides:
     category: kernel
 annotations:
   kernel:
-    eol: N/A
+    eol: "Nov, 2023"
     lts: false
     released: "2023-08-27"
     suffix: macaroni
