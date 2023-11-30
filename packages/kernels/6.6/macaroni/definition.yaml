@@ -13,8 +13,8 @@ requires:
     category: virtual
 annotations:
   kernel:
-    eol: N/A
-    lts: false
+    eol: "Dec, 2026"
+    lts: true
     released: "2023-10-30"
     suffix: macaroni
     type: vanilla
