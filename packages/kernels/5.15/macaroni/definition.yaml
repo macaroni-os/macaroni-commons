@@ -19,7 +19,7 @@ annotations:
   kernel:
     lts: true
     suffix: macaroni
-    eol: "Oct, 2026"
+    eol: "Dec, 2026"
     released: "2021-10-31"
     type: vanilla
 labels:
