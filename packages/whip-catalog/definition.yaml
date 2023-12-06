@@ -1,10 +1,10 @@
 category: "macaroni"
 name: "whip-catalog"
-version: "0.20231114"
+version: "0.20231206"
 labels:
   github.repo: "whip-catalog"
   github.owner: "geaaru"
-  git.sha: "f6cef47ee25faa91a8de9f66739460b296860a20"
+  git.sha: "544e7f8921237ae356ed2abce80dfd0426fd7dd6"
 description: "Macaroni Whip Catalog"
 uri:
 - "https://github.com/geaaru/whip"
