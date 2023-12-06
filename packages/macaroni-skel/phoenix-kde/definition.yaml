@@ -1,17 +1,10 @@
 name: skel-phoenix-kde
-version: "0.20231204"
+version: 0.20231204+1
 category: macaroni
 requires:
 - name: skel-phoenix
   version: '>=0'
   category: macaroni
-# TODO: just avoid this for now
-#       because it generates errors
-#       on tree validation of the
-#       macaroni-funtoo systemd branch
-#- name: macaroni-gnome-shell-theme
-#  version: '>=0'
-#  category: x11-themes
 description: Macaroni Phoenix Skel Files for KDE
 uri:
 - https://github.com/macaroni-os/macaroni-commons
