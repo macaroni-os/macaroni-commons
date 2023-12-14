@@ -6264,7 +6264,13 @@ groups:
       password: "!"
 
   incus:
-    gid: 512
+    gid: 532
+    password: x
+    gshadow:
+      password: "!"
+
+  incus-admin:
+    gid: 533
     password: x
     gshadow:
       password: "!"
