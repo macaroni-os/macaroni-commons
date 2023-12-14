@@ -1,5 +1,5 @@
 name: skel-phoenix-kde
-version: 0.20231204+1
+version: "0.20231214"
 category: macaroni
 requires:
 - name: skel-phoenix
