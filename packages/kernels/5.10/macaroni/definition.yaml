@@ -1,5 +1,5 @@
 name: macaroni-full
-version: 5.10.205
+version: 5.10.206
 category: kernel-5.10
 requires:
   - name: macaroni-lts-modules
@@ -34,4 +34,4 @@ labels:
   autobump.string_replace: '{ "prefix": "" }'
   autobump.version_hook: |
     curl -Ls https://kernel.org/releases.json | jq -cr '[ .releases[] | select(.moniker == "longterm") ][0].version'
-  package.version: 5.10.205
+  package.version: 5.10.206
