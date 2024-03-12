@@ -1,0 +1,8 @@
+name: macaroni-modules
+version: 6.8.0
+category: kernel-6.8
+prefix: linux
+arch: "x86_64"
+suffix: macaroni
+labels:
+  package.version: 6.8.0
