@@ -2,7 +2,7 @@ image: "macaronios/terragon-minimal-devel:latest-amd64"
 env:
 - ARCH=x86_64
 - KERNEL_PREFIX=zen
-- SUFFIX=macaroni-zen
+- SUFFIX=macaroni
 - KERNEL_TYPE=linux
 prelude:
 - >-
