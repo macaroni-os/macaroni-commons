@@ -1,0 +1,22 @@
+name: macaroni-zen-full
+version: 6.7.9
+category: kernel-6.7
+requires:
+  - name: macaroni-zen-modules
+    version: '>=0'
+    category: kernel-6.7
+  - name: ctl
+    version: '>=0'
+    category: macaroni
+  - name: sh
+    version: '>=0'
+    category: virtual
+annotations:
+  kernel:
+    eol: "N/A"
+    lts: false
+    released: "2024-01-07"
+    suffix: macaroni-zen
+    type: zen
+labels:
+  package.version: 6.7.9-zen1
