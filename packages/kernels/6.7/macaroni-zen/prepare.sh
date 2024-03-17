@@ -9,7 +9,7 @@ fi
 original_version="${download_version}-zen1"
 wget https://github.com/zen-kernel/zen-kernel/archive/refs/tags/v${original_version}.tar.gz -O kernel.tar.gz
 tar xzf kernel.tar.gz
-mv zen-kernel-${download_version} ${KERNEL_TYPE}
+mv zen-kernel-${original_version} ${KERNEL_TYPE}
 cp -rfv macaroni-zen-$ARCH.config ${KERNEL_TYPE}/.config
 cd ${KERNEL_TYPE}
 make olddefconfig
