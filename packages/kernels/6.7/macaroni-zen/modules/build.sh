@@ -1,6 +1,7 @@
 #!/bin/bash
 
 PACKAGE_VERSION=${PACKAGE_VERSION%\+*}
+kernel_version="${PACKAGE_VERSION}-zen1"
 outdir="/luetbuild/modules"
 mkdir -p $outdir/boot
 pushd linux 
@@ -18,9 +19,9 @@ rm -f "$outdir"/lib/modules/**/build \
 
 popd
 
-mv $outdir/boot/config-$PACKAGE_VERSION-${SUFFIX} \
-  $outdir/boot/config-${KERNEL_PREFIX}-${ARCH}-${PACKAGE_VERSION}-${SUFFIX}
-mv $outdir/boot/System.map-$PACKAGE_VERSION-${SUFFIX} \
-  $outdir/boot/System.map-${KERNEL_PREFIX}-${ARCH}-${PACKAGE_VERSION}-${SUFFIX}
-mv $outdir/boot/vmlinuz-$PACKAGE_VERSION-${SUFFIX} \
-  $outdir/boot/vmlinuz-${KERNEL_PREFIX}-${ARCH}-${PACKAGE_VERSION}-${SUFFIX}
+mv $outdir/boot/config-${kernel_version}-${SUFFIX} \
+  $outdir/boot/config-${KERNEL_PREFIX}-${ARCH}-${kernel_version}-${SUFFIX}
+mv $outdir/boot/System.map-${kernel_version}-${SUFFIX} \
+  $outdir/boot/System.map-${KERNEL_PREFIX}-${ARCH}-${kernel_version}-${SUFFIX}
+mv $outdir/boot/vmlinuz-${kernel_version}-${SUFFIX} \
+  $outdir/boot/vmlinuz-${KERNEL_PREFIX}-${ARCH}-${kernel_version}-${SUFFIX}
