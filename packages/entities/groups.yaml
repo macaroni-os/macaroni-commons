@@ -6263,6 +6263,22 @@ groups:
     gshadow:
       password: "!"
 
+  pipewire:
+    gid: 512
+    password: x
+    user:
+      uid: 512
+      gid: 512
+      info: "Pipewire Application"
+      homedir: /var/run/pipewire
+      shell: /sbin/nologin
+      group: "pipewire,audio"
+      password: x
+    shadow:
+      password: "!"
+    gshadow:
+      password: "!"
+
   incus:
     gid: 532
     password: x
