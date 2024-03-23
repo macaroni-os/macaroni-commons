@@ -1,5 +1,5 @@
 name: macaroni-zen-minimal
-version: 6.7.9+2
+version: 6.7.9+3
 category: kernel-6.7
 requires:
 - name: ctl
@@ -7,7 +7,3 @@ requires:
   category: macaroni
 labels:
   package.version: 6.7.9-zen1
-kernelprefix: kernel-zen
-arch: "x86_64"
-suffix: macaroni
-prefix: zen
