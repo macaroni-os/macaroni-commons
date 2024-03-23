@@ -1,5 +1,5 @@
 name: macaroni-zen-full
-version: 6.7.9+2
+version: 6.7.9+3
 category: kernel-6.7
 requires:
 - name: macaroni-zen-modules
