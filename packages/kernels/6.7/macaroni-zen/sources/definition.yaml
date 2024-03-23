@@ -3,3 +3,5 @@ version: 6.7.9+4
 category: kernel-6.7
 labels:
   package.version: 6.7.9-zen1
+prefix: linux
+suffix: macaroni
