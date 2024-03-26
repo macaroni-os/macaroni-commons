@@ -7,3 +7,7 @@ requires:
   category: macaroni
 labels:
   package.version: 6.7.9-zen1
+kernelprefix: kernel-zen
+arch: x86_64
+suffix: macaroni
+prefix: zen
