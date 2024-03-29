@@ -1,5 +1,5 @@
 name: macaroni-zen-modules
-version: 6.7.9+7
+version: 6.7.9+8
 category: kernel-6.7
 labels:
   package.version: 6.7.9-zen1
