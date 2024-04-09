@@ -1,0 +1,10 @@
+category: "app-admin"
+name: "gpu-configurator"
+version: "0.1.0"
+labels:
+  github.repo: "macaroni-os"
+  github.owner: "gpu-configurator"
+description: "GPU configurator helper"
+uri:
+- "https://github.com/macaroni-os/gpu-configurator"
+license: "GPL-3.0"
