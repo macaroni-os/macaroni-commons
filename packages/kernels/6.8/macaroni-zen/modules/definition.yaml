@@ -1,0 +1,8 @@
+name: macaroni-zen-modules
+version: 6.8.6
+category: kernel-6.8
+labels:
+  package.version: 6.8.6-zen1
+prefix: zen
+arch: x86_64
+suffix: macaroni
