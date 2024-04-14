@@ -1,0 +1,7 @@
+name: macaroni-zen-sources
+version: 6.8.6
+category: kernel-6.8
+labels:
+  package.version: 6.8.6-zen1
+prefix: linux
+suffix: macaroni
