@@ -1,7 +1,7 @@
 name: macaroni-sources
-version: 6.8.6
+version: 6.8.7
 category: kernel-6.8
 prefix: linux
 suffix: macaroni
 labels:
-  package.version: 6.8.6
+  package.version: 6.8.7
