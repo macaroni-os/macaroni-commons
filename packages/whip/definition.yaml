@@ -1,10 +1,10 @@
 category: "app-admin"
 name: "whip"
-version: "0.0.2"
+version: "0.0.3"
 labels:
-  github.repo: "geaaru"
+  github.repo: "macaroni-os"
   github.owner: "whip"
 description: "System Status Inspector and Hooks handler"
 uri:
-- "https://github.com/geaaru/whip"
+- "https://github.com/macaroni-os/whip"
 license: "GPL-3.0"
