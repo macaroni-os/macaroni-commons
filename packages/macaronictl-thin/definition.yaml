@@ -1,5 +1,5 @@
 name: macaronictl-thin
-version: 0.9.2
+version: 0.10.0
 category: app-admin
 conflicts:
 - name: macaronictl
@@ -7,7 +7,7 @@ conflicts:
   category: app-admin
 provides:
 - name: ctl
-  version: 0.9.2
+  version: 0.10.0
   category: macaroni
 annotations:
   subsets:
