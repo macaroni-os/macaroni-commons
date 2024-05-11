@@ -6291,6 +6291,21 @@ groups:
     gshadow:
       password: "!"
 
+  backrest:
+    gid: 534
+    password: x
+    user:
+      uid: 534
+      gid: 534
+      info: "BackRest Application"
+      homedir: /var/lib/backrest
+      shell: /sbin/nologin
+      password: x
+    shadow:
+      password: "!"
+    gshadow:
+      password: "!"
+
   nogroup:
     gid: 65533
     # TODO: to check
