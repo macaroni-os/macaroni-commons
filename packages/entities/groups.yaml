@@ -3459,7 +3459,7 @@ groups:
     user:
       uid: 309
       gid: 309
-      homedir: /dev/null
+      homedir: /var/lib/minio/
       shell: /sbin/nologin
       password: x
     shadow:
