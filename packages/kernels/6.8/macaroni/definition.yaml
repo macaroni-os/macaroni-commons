@@ -13,7 +13,7 @@ requires:
     category: virtual
 annotations:
   kernel:
-    eol: "N/A"
+    eol: "May, 2024"
     lts: false
     released: "2024-03-10"
     suffix: macaroni
