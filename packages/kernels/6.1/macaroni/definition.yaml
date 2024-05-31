@@ -1,6 +1,6 @@
 name: macaroni-full
 category: kernel-6.1
-version: 6.1.91
+version: 6.1.92
 provides:
   - category: kernel
     name: macaroni-full
@@ -34,4 +34,4 @@ labels:
     curl -Ls https://kernel.org/releases.json | jq -cr '[ .releases[] | select(.moniker == "longterm") ][0].version'
   autobump.version_hook: |
     curl -Ls https://kernel.org/releases.json | jq -cr '[ .releases[] | select(.moniker == "longterm") ][0].version'
-  package.version: 6.1.91
+  package.version: 6.1.92
