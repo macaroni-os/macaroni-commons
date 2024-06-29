@@ -1,11 +1,15 @@
-image: golang
+image: macaronios/terragon-testing-minimal:latest-amd64
 env:
 - GOPATH=/luetbuild/go/
 - GITHUB_ORG={{ ( index .Values.labels "github.owner" ) }}
 package_dir: /{{ .Values.name }}
 prelude:
-- mkdir go/src/github.com/${GITHUB_ORG}/ -p
-- cd go/src/github.com/${GITHUB_ORG}/ && git clone https://github.com/${GITHUB_ORG}/{{ .Values.name }}.git
+- >-
+  luet i -y --sync-repos --purge-repos --cleanup make upx-bin go ca-certificates git &&
+  mkdir /tmp/ &&
+  mkdir go/src/github.com/${GITHUB_ORG}/ -p &&
+  cd go/src/github.com/${GITHUB_ORG}/ &&
+  git clone https://github.com/${GITHUB_ORG}/{{ .Values.name }}.git
 steps:
 - >-
   cd go/src/github.com/${GITHUB_ORG}/{{ .Values.name }}/ &&
