@@ -1,0 +1,8 @@
+uninstall:
+- >-
+  eval 'rm -vf ${EROOT}/lib/modules/{{ index .Values.labels "package.version" }}-macaroni/modules.* || true' &&
+  withfiles=$(ls -1 ${EROOT}/lib/modules/{{ index .Values.labels "package.version" }}-macaroni/ | wc -l) &&
+  if [ $withfiles -eq 0 ] ; then rm -rf ${EROOT}/lib/modules/{{ index .Values.labels "package.version" }}-macaroni/ ; fi
+install:
+- depmod -a {{ index .Values.labels "package.version" }}-macaroni || true
+- if [ -z ${BUILD_ISO} ] ; then  env && PATH="/bin:/sbin:/usr/bin:/usr/sbin" macaronictl kernel gi --set-links --grub --purge --all || true ; fi
