@@ -1973,8 +1973,8 @@ groups:
     user:
       uid: 196
       gid: 196
-      homedir: /dev/null
-      shell: /sbin/nologin
+      homedir: /var/lib/git
+      shell: /bin/sh
       password: x
     shadow:
       password: "!"
@@ -6300,6 +6300,20 @@ groups:
       info: "BackRest Application"
       homedir: /var/lib/backrest
       shell: /sbin/nologin
+      password: x
+    shadow:
+      password: "!"
+    gshadow:
+      password: "!"
+
+  gitea:
+    gid: 535
+    password: x
+    user:
+      uid: 535
+      gid: 535
+      homedir: /var/lib/gitea
+      shell: /bin/sh
       password: x
     shadow:
       password: "!"
