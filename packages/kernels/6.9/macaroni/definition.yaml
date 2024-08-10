@@ -1,5 +1,5 @@
 name: macaroni-full
-version: 6.9.10
+version: 6.9.12
 category: kernel-6.9
 requires:
   - name: macaroni-modules
@@ -19,4 +19,4 @@ annotations:
     suffix: macaroni
     type: vanilla
 labels:
-  package.version: 6.9.10
+  package.version: 6.9.12
