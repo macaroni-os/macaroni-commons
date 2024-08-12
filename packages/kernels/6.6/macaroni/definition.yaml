@@ -1,5 +1,5 @@
 name: macaroni-full
-version: 6.6.44
+version: 6.6.45
 category: kernel-6.6
 requires:
   - name: macaroni-modules
@@ -27,4 +27,4 @@ labels:
   autobump.string_replace: '{ "prefix": "" }'
   autobump.version_hook: |
     curl -Ls https://kernel.org/releases.json | jq -cr '[ .releases[] | select(.moniker == "longterm") ][0].version'
-  package.version: 6.6.44
+  package.version: 6.6.45
