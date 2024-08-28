@@ -1,6 +1,6 @@
 category: "app-admin"
 name: "gpu-configurator"
-version: "0.2.1"
+version: "0.2.2"
 labels:
   github.repo: "macaroni-os"
   github.owner: "gpu-configurator"
