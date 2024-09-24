@@ -8,3 +8,6 @@ packages:
 - category: "x11-themes"
   name: "plymouth-funtoo-tux"
   version: "1"
+- category: "x11-themes"
+  name: "plymouth-macaroni"
+  version: "1"
