@@ -1,0 +1,7 @@
+name: macaroni-zen-sources
+version: 6.11.2
+category: kernel-6.11
+labels:
+  package.version: 6.11.2-zen1
+prefix: linux
+suffix: macaroni
