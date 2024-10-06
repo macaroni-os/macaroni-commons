@@ -1,0 +1,8 @@
+name: macaroni-zen-modules
+version: 6.11.
+category: kernel-6.11
+labels:
+  package.version: 6.11.2-zen1
+prefix: zen
+arch: x86_64
+suffix: macaroni
