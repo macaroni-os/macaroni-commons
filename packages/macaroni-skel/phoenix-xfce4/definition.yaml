@@ -1,5 +1,5 @@
 name: skel-phoenix-xfce4
-version: 0.20221003+2
+version: "0.20241007"
 category: macaroni
 requires:
 - name: skel-phoenix
