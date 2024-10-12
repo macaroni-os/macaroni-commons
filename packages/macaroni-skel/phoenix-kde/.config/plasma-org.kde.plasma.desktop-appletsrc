@@ -20,20 +20,26 @@ plugin=org.kde.plasma.kickoff
 
 [Containments][18][Applets][19][Configuration]
 PreloadWeight=100
+popupHeight=514
+popupWidth=643
+
+[Containments][18][Applets][19][Configuration][ConfigDialog]
+DialogHeight=540
+DialogWidth=720
 
 [Containments][18][Applets][19][Configuration][General]
 favoritesPortedToKAstats=true
-
-[Containments][18][Applets][20]
-immutability=1
-plugin=org.kde.plasma.battery
+icon=/usr/share/themes/Macaroni/gnome-shell/common-assets/panel/panel-icon.png
+systemFavorites=suspend\\,hibernate\\,reboot\\,shutdown
 
 [Containments][18][Applets][22]
 immutability=1
 plugin=org.kde.plasma.digitalclock
 
 [Containments][18][Applets][22][Configuration]
-PreloadWeight=60
+PreloadWeight=65
+popupHeight=450
+popupWidth=396
 
 [Containments][18][Applets][23]
 immutability=1
@@ -56,11 +62,11 @@ immutability=1
 plugin=org.kde.plasma.minimizeall
 
 [Containments][18][ConfigDialog]
-DialogHeight=77
-DialogWidth=1920
+DialogHeight=84
+DialogWidth=1525
 
 [Containments][18][General]
-AppletOrder=19;34;33;22;32;20;23
+AppletOrder=19;34;33;22;32;23
 
 [Containments][24]
 activityId=
@@ -102,14 +108,30 @@ plugin=org.kde.plasma.networkmanagement
 [Containments][24][Applets][31][Configuration]
 PreloadWeight=60
 
-[Containments][24][General]
-extraItems=org.kde.plasma.battery,org.kde.plasma.clipboard,org.kde.plasma.devicenotifier,org.kde.plasma.keyboardlayout,org.kde.plasma.manage-inputmethod,org.kde.plasma.mediacontroller,org.kde.plasma.networkmanagement,org.kde.plasma.notifications,org.kde.plasma.printmanager
-knownItems=org.kde.plasma.battery,org.kde.plasma.clipboard,org.kde.plasma.devicenotifier,org.kde.plasma.keyboardlayout,org.kde.plasma.manage-inputmethod,org.kde.plasma.mediacontroller,org.kde.plasma.networkmanagement,org.kde.plasma.notifications,org.kde.plasma.printmanager
+[Containments][24][Applets][35]
+immutability=1
+plugin=org.kde.kdeconnect
 
-[Containments][35]
-ItemGeometries-1920x1080=
+[Containments][24][Applets][36]
+immutability=1
+plugin=org.kde.kscreen
+
+[Containments][24][Applets][38]
+immutability=1
+plugin=org.kde.plasma.battery
+
+[Containments][24][Applets][39]
+immutability=1
+plugin=org.kde.plasma.bluetooth
+
+[Containments][24][General]
+extraItems=org.kde.plasma.battery,org.kde.plasma.clipboard,org.kde.plasma.devicenotifier,org.kde.plasma.keyboardlayout,org.kde.plasma.manage-inputmethod,org.kde.plasma.mediacontroller,org.kde.plasma.networkmanagement,org.kde.plasma.notifications,org.kde.plasma.printmanager,org.kde.kdeconnect,org.kde.kscreen,org.kde.plasma.bluetooth
+knownItems=org.kde.plasma.battery,org.kde.plasma.clipboard,org.kde.plasma.devicenotifier,org.kde.plasma.keyboardlayout,org.kde.plasma.manage-inputmethod,org.kde.plasma.mediacontroller,org.kde.plasma.networkmanagement,org.kde.plasma.notifications,org.kde.plasma.printmanager,org.kde.kdeconnect,org.kde.kscreen,org.kde.plasma.bluetooth
+
+[Containments][37]
+ItemGeometries-1525x1256=
 ItemGeometriesHorizontal=
-activityId=5d7c90e3-c830-4eb8-a48d-ab3fcc946709
+activityId=19970085-6d6e-409b-90bc-5a9177e17fa6
 formfactor=0
 immutability=1
 lastScreen=0
@@ -117,13 +139,19 @@ location=0
 plugin=org.kde.plasma.folder
 wallpaperplugin=org.kde.image
 
-[Containments][35][ConfigDialog]
-DialogHeight=360
-DialogWidth=1876
+[Containments][37][ConfigDialog]
+DialogHeight=540
+DialogWidth=720
 
-[Containments][35][Wallpaper][org.kde.image][General]
+[Containments][37][General]
+ToolBoxButtonState=topcenter
+ToolBoxButtonX=269
+ToolBoxButtonY=30
+
+[Containments][37][Wallpaper][org.kde.image][General]
 Image=/usr/share/backgrounds/macaroni/macaroni1.jpg
-SlidePaths=/usr/share/wallpapers
+SlidePaths=/usr/share/wallpapers/
 
 [ScreenMapping]
 itemsOnDisabledScreens=
+screenMapping=

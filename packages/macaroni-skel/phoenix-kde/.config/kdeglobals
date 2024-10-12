@@ -136,7 +136,10 @@ ForegroundPositive=39,174,96
 ForegroundVisited=155,89,182
 
 [General]
-ColorSchemeHash=f7f5d6b25932295dba6762bfcb746e098e06fca5
+ColorSchemeHash=2ef8a9f7238e072ca91b0eb590f49ded650c76bd
+
+[Icons]
+Theme=ePapirus
 
 [KFileDialog Settings]
 Allow Expansion=false

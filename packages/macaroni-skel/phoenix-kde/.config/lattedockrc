@@ -12,6 +12,7 @@ PreloadWeight=42
 
 [ScreenConnectors]
 10=eDP-1:::0,0 1920x1080
+11=Virtual-1:::0,0 1525x1256
 
 [UniversalSettings]
 badges3DStyle=false
