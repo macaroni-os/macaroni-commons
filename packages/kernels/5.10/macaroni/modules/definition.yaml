@@ -1,5 +1,5 @@
 name: macaroni-modules
-version: 5.10.225
+version: 5.10.228
 category: kernel-5.10
 prefix: linux
 arch: "x86_64"
@@ -20,4 +20,4 @@ labels:
   autobump.string_replace: '{ "prefix": "" }'
   autobump.version_hook: |
     curl -Ls https://kernel.org/releases.json | jq -cr '[ .releases[] | select(.moniker == "longterm") ][0].version'
-  package.version: 5.10.225
+  package.version: 5.10.228
