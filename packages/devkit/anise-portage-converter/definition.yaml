@@ -1,9 +1,9 @@
 name: anise-portage-converter
-version: 0.14.4
+version: 0.15.0
 category: macaroni
 provides:
 - name: luet-portage-converter
-  version: 0.14.4
+  version: 0.15.0
   category: macaroni
 license: GPL-3.0
 labels:
