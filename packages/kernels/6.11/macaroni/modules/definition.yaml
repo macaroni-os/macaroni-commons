@@ -1,8 +1,8 @@
 name: macaroni-modules
-version: 6.11.8
+version: 6.11.9
 category: kernel-6.11
 prefix: linux
 arch: "x86_64"
 suffix: macaroni
 labels:
-  package.version: 6.11.8
+  package.version: 6.11.9
