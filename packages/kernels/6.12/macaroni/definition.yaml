@@ -15,7 +15,7 @@ annotations:
   kernel:
     eol: "N/A"
     lts: false
-    released: "2024-09-15"
+    released: "2024-11-17"
     suffix: macaroni
     type: vanilla
 labels:
