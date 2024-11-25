@@ -6320,6 +6320,20 @@ groups:
     gshadow:
       password: "!"
 
+  traefik:
+    gid: 536
+    password: x
+    user:
+      uid: 536
+      gid: 536
+      homedir: /var/lib/traefik
+      shell: /bin/sh
+      password: x
+    shadow:
+      password: "!"
+    gshadow:
+      password: "!"
+
   nogroup:
     gid: 65533
     # TODO: to check
