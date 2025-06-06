@@ -1,0 +1,8 @@
+name: macaroni-modules
+version: 6.14.10
+category: kernel-6.14
+prefix: linux
+arch: "x86_64"
+suffix: macaroni
+labels:
+  package.version: 6.14.10
