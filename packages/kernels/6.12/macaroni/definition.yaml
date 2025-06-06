@@ -14,7 +14,7 @@ requires:
 annotations:
   kernel:
     eol: "N/A"
-    lts: false
+    lts: true
     released: "2024-11-17"
     suffix: macaroni
     type: vanilla
