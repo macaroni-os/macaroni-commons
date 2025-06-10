@@ -52,7 +52,9 @@ prelude:
 steps:
 
 # grab deps library for udev probe init functionalities
-- go get github.com/pilebones/go-udev@v{{ .Values.go_udev_version }}
+- cd $GOPATH/src/github.com/u-root/u-root && \
+  go get github.com/pilebones/go-udev@v{{ .Values.go_udev_version }}
+
 #- go get pault.ag/go/modprobe
 
 - mkdir modules_copy
