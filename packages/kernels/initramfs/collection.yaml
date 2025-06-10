@@ -9,7 +9,7 @@ packages:
         name: "macaroni-lts-initramfs"
     #git_sha: "v1.0.1"
     git_sha: "ff9c8884b4a616233eeea068697dfc672c22e2ca"
-    golang_version: "1.20.14"
+    golang_version: "1.22.12"
     arch: "amd64"
     labels:
       package.version: "5.4.294"
@@ -27,7 +27,7 @@ packages:
         version: "5.10.238"
     git_sha: "ff9c8884b4a616233eeea068697dfc672c22e2ca"
     #git_sha: "v1.0.1"
-    golang_version: "1.20.14"
+    golang_version: "1.22.12"
     arch: "amd64"
     labels:
       package.version: "5.10.238"
@@ -42,7 +42,7 @@ packages:
         version: "5.15.185"
     git_sha: "ff9c8884b4a616233eeea068697dfc672c22e2ca"
     #git_sha: "v1.0.1"
-    golang_version: "1.20.14"
+    golang_version: "1.22.12"
     arch: "amd64"
     labels:
       package.version: "5.15.185"
@@ -53,7 +53,7 @@ packages:
     version: "6.1.141"
     git_sha: "ff9c8884b4a616233eeea068697dfc672c22e2ca"
     #git_sha: "v1.0.1"
-    golang_version: "1.20.14"
+    golang_version: "1.22.12"
     arch: "amd64"
     labels:
       package.version: "6.1.141"
@@ -64,7 +64,7 @@ packages:
     version: "6.6.62"
     git_sha: "ff9c8884b4a616233eeea068697dfc672c22e2ca"
     #git_sha: "v1.0.1"
-    golang_version: "1.20.14"
+    golang_version: "1.22.12"
     arch: "amd64"
     labels:
       package.version: "6.6.62"
@@ -75,7 +75,7 @@ packages:
     version: "6.8.12"
     git_sha: "ff9c8884b4a616233eeea068697dfc672c22e2ca"
     #git_sha: "v1.0.1"
-    golang_version: "1.20.14"
+    golang_version: "1.22.12"
     arch: "amd64"
     labels:
       package.version: "6.8.12"
@@ -86,7 +86,7 @@ packages:
     version: "6.10.14"
     git_sha: "ff9c8884b4a616233eeea068697dfc672c22e2ca"
     #git_sha: "v1.0.1"
-    golang_version: "1.20.14"
+    golang_version: "1.22.12"
     arch: "amd64"
     labels:
       package.version: "6.10.14"
@@ -97,7 +97,7 @@ packages:
     version: "6.11.9"
     git_sha: "ff9c8884b4a616233eeea068697dfc672c22e2ca"
     #git_sha: "v1.0.1"
-    golang_version: "1.20.14"
+    golang_version: "1.22.12"
     arch: "amd64"
     labels:
       package.version: "6.11.9"
@@ -108,7 +108,7 @@ packages:
     version: "6.12.32"
     git_sha: "ff9c8884b4a616233eeea068697dfc672c22e2ca"
     #git_sha: "v1.0.1"
-    golang_version: "1.20.14"
+    golang_version: "1.22.12"
     arch: "amd64"
     labels:
       package.version: "6.12.32"
