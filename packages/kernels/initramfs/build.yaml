@@ -107,6 +107,7 @@ steps:
 # github.com/u-root/u-root/cmds/core/switch_root \
 - |
   cd $GOPATH/src/github.com/u-root/u-root && \
+  go mod vendor &&
   u-root \
   -files "/luetbuild/loader.sh:loader" \
   -files "/luetbuild/modules_copy/luetbuild/modules/lib/modules:lib/modules" \
