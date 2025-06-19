@@ -1,5 +1,5 @@
 name: macaroni-minimal
-version: 6.12.33
+version: 6.12.33+1
 category: kernel-6.12
 kernelprefix: kernel-vanilla
 arch: "x86_64"
