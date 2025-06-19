@@ -95,7 +95,7 @@ repository/mark:
 	git clone -b phoenix --single-branch https://github.com/macaroni-os/mark-repo $(ROOT_DIR)/repository/mark
 
 repository/macaroni-funtoo:
-	git clone -b master --single-branch https://github.com/geaaru/luet-funtoo $(ROOT_DIR)/repository/macaroni-funtoo
+	git clone -b terragon --single-branch https://github.com/macaroni-os/macaroni-funtoo.git $(ROOT_DIR)/repository/macaroni-funtoo
 
 .PHONY: validate
 validate: repository repository/mark
