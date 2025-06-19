@@ -98,5 +98,5 @@ repository/macaroni-funtoo:
 	git clone -b terragon --single-branch https://github.com/macaroni-os/macaroni-funtoo.git $(ROOT_DIR)/repository/macaroni-funtoo
 
 .PHONY: validate
-validate: repository repository/mark
+validate: repository repository/mark repository/macaroni-funtoo
 	$(LUET) tree validate --tree $(ROOT_DIR)/repository --tree $(TREE) $(VALIDATE_OPTIONS)
