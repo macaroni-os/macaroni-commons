@@ -1,5 +1,5 @@
 name: macaroni-full
-version: 6.12.33
+version: 6.12.33+1
 category: kernel-6.12
 requires:
   - name: macaroni-modules
