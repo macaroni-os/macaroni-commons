@@ -1,8 +1,5 @@
 name: macaroni-modules
-version: 6.12.33+1
+version: 6.12.33+2
 category: kernel-6.12
-prefix: linux
-arch: "x86_64"
-suffix: macaroni
 labels:
   package.version: 6.12.33
