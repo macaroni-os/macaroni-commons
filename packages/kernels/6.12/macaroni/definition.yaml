@@ -1,19 +1,19 @@
 name: macaroni-full
-version: 6.12.33+1
+version: 6.12.33+2
 category: kernel-6.12
 requires:
-  - name: macaroni-modules
-    version: '>=0'
-    category: kernel-6.12
-  - name: ctl
-    version: '>=0'
-    category: macaroni
-  - name: sh
-    version: '>=0'
-    category: virtual
+- name: macaroni-modules
+  version: '>=0'
+  category: kernel-6.12
+- name: ctl
+  version: '>=0'
+  category: macaroni
+- name: sh
+  version: '>=0'
+  category: virtual
 annotations:
   kernel:
-    eol: "N/A"
+    eol: N/A
     lts: true
     released: "2024-11-17"
     suffix: macaroni
