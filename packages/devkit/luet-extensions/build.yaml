@@ -1,0 +1,24 @@
+image: macaronios/terragon-testing-minimal:latest-amd64
+env:
+- BUNDLED_EXTENSIONS="{{.Values.extensions}}"
+prelude:
+- >-
+  luet i -y --sync-repos make upx-bin go ca-certificates git &&
+  luet cleanup --purge-repos && mkdir /tmp
+- git clone https://github.com/{{ ( index .Values.labels "github.owner" ) }}/extensions
+{{- if not .Values.live }}
+{{- if .Values.fork }}
+- |
+   PACKAGE_VERSION=${PACKAGE_VERSION%\+*} && \
+   cd extensions && git checkout v${PACKAGE_VERSION}-{{ .Values.fork }}
+{{ else }}
+- |
+   PACKAGE_VERSION=${PACKAGE_VERSION%\+*} && \
+   cd extensions && git checkout v${PACKAGE_VERSION}
+{{ end }}
+{{- end }}
+- mkdir /luet-extensions
+- cd extensions && make build
+package_dir: "/luet-extensions"
+steps:
+- cd extensions && DESTDIR=/luet-extensions make install
