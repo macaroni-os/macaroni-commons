@@ -1,0 +1,7 @@
+name: macaroni-zen-sources
+version: 6.15.3
+category: kernel-6.15
+labels:
+  package.version: 6.15.3-zen1
+prefix: linux
+suffix: macaroni
