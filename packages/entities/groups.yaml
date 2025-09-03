@@ -6334,6 +6334,20 @@ groups:
     gshadow:
       password: "!"
 
+  caddy:
+    gid: 537
+    password: x
+    user:
+      uid: 537
+      gid: 537
+      homedir: /var/www/caddy
+      shell: /sbin/nologin
+      password: x
+    shadow:
+      password: "!"
+    gshadow:
+      password: "!"
+
   nogroup:
     gid: 65533
     # TODO: to check
