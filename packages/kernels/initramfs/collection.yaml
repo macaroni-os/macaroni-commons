@@ -113,11 +113,11 @@ packages:
   - category: "kernel-6.12"
     name: "macaroni-initramfs"
     modules_name: "macaroni-modules"
-    version: "6.12.43"
+    version: "6.12.45"
     git_sha: "3bc921dcfa99f9e7cf28c5fe96c14ae091af55c4"
     #git_sha: "v1.0.1"
     golang_version: "1.22.12"
     go_udev_version: "0.9.0"
     arch: "amd64"
     labels:
-      package.version: "6.12.43"
+      package.version: "6.12.45"
