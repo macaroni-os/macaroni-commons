@@ -65,14 +65,14 @@ packages:
   - category: "kernel-6.6"
     name: "macaroni-initramfs"
     modules_name: "macaroni-modules"
-    version: "6.6.93"
+    version: "6.6.104"
     git_sha: "3bc921dcfa99f9e7cf28c5fe96c14ae091af55c4"
     #git_sha: "v1.0.1"
     golang_version: "1.22.12"
     go_udev_version: "0.9.0"
     arch: "amd64"
     labels:
-      package.version: "6.6.93"
+      package.version: "6.6.104"
 
   - category: "kernel-6.8"
     name: "macaroni-initramfs"
