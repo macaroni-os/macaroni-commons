@@ -6348,6 +6348,20 @@ groups:
     gshadow:
       password: "!"
 
+  ollama:
+    gid: 538
+    password: x
+    user:
+      uid: 538
+      gid: 538
+      homedir: /var/lib/ollama
+      shell: /sbin/nologin
+      password: x
+    shadow:
+      password: "!"
+    gshadow:
+      password: "!"
+
   nogroup:
     gid: 65533
     # TODO: to check
