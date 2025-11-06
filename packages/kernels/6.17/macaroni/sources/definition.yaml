@@ -1,0 +1,7 @@
+name: macaroni-sources
+version: 6.17.7
+category: kernel-6.17
+prefix: linux
+suffix: macaroni
+labels:
+  package.version: 6.17.7
