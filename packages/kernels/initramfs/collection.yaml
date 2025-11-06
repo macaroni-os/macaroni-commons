@@ -2,10 +2,10 @@ packages:
   - category: "kernel-5.4"
     name: "macaroni-initramfs"
     modules_name: "macaroni-modules"
-    version: "5.4.298"
+    version: "5.4.301"
     provides:
       - category: "kernel-5.4"
-        version: "5.4.298"
+        version: "5.4.301"
         name: "macaroni-lts-initramfs"
     #git_sha: "v1.0.1"
     git_sha: "3bc921dcfa99f9e7cf28c5fe96c14ae091af55c4"
@@ -13,7 +13,7 @@ packages:
     go_udev_version: "0.9.0"
     arch: "amd64"
     labels:
-      package.version: "5.4.298"
+      package.version: "5.4.301"
 
   - category: "kernel-5.10"
     name: "macaroni-initramfs"
