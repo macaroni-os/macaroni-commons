@@ -1,5 +1,5 @@
 name: macaroni-full
-version: 6.16.5
+version: 6.16.12
 category: kernel-6.16
 requires:
   - name: macaroni-modules
@@ -13,10 +13,10 @@ requires:
     category: virtual
 annotations:
   kernel:
-    eol: "N/A"
+    eol: "2025-10-12"
     lts: false
     released: "2025-07-28"
     suffix: macaroni
     type: vanilla
 labels:
-  package.version: 6.16.5
+  package.version: 6.16.12
