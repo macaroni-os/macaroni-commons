@@ -6362,6 +6362,20 @@ groups:
     gshadow:
       password: "!"
 
+  gnome-remote-desktop:
+    gid: 545
+    password: x
+    user:
+      uid: 545
+      gid: 545
+      homedir: /var/lib/gnome-remote-desktop
+      shell: /sbin/nologin
+      password: x
+    shadow:
+      password: "!"
+    gshadow:
+      password: "!"
+
   nogroup:
     gid: 65533
     # TODO: to check
