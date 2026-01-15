@@ -6390,6 +6390,20 @@ groups:
     gshadow:
       password: "!"
 
+  sssd:
+    gid: 547
+    password: x
+    user:
+      uid: 547
+      gid: 547
+      homedir: /dev/null
+      shell: /sbin/nologin
+      password: x
+    shadow:
+      password: "!"
+    gshadow:
+      password: "!"
+
   nogroup:
     gid: 65533
     # TODO: to check
