@@ -6404,6 +6404,12 @@ groups:
     gshadow:
       password: "!"
 
+  gitlab:
+    gid: 548
+    password: x
+    gshadow:
+      password: "!"
+
   nogroup:
     gid: 65533
     # TODO: to check
