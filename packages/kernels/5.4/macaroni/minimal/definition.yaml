@@ -10,8 +10,8 @@ provides:
     category: kernel-5.4
     version: 5.4.231
 requires:
-  - category: macaroni
-    name: ctl
+  - category: app-admin
+    name: macaronictl
     version: ">=0"
 labels:
   autobump.revdeps: "false"

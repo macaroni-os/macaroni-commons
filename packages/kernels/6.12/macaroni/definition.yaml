@@ -5,9 +5,9 @@ requires:
   - name: macaroni-modules
     version: '>=0'
     category: kernel-6.12
-  - name: ctl
+  - name: macaronictl
     version: '>=0'
-    category: macaroni
+    category: app-admin
   - name: sh
     version: '>=0'
     category: virtual

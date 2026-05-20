@@ -6,8 +6,8 @@ arch: "x86_64"
 suffix: macaroni
 prefix: linux
 requires:
-  - name: ctl
+  - name: macaronictl
     version: '>=0'
-    category: macaroni
+    category: app-admin
 labels:
   package.version: 6.10.14

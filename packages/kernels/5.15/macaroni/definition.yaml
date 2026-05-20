@@ -9,9 +9,9 @@ requires:
   - name: macaroni-lts-modules
     version: '>=0'
     category: kernel-5.15
-  - name: ctl
+  - name: macaronictl
     version: '>=0'
-    category: macaroni
+    category: app-admin
   - name: sh
     version: '>=0'
     category: virtual
