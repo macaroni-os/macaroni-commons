@@ -1,10 +1,10 @@
 category: "net-im"
 name: "mattermost"
-version: "10.11.19"
+version: "10.11.21"
 labels:
   github.repo: "mattermost"
   github.owner: "mattermost-sever"
-  original.package.version: "10.11.19"
+  original.package.version: "10.11.21"
 description: "Mattermost is an open source platform for secure collaboration across the entire software development lifecycle."
 uri:
 - "https://github.com/mattermost/mattermost-server"
