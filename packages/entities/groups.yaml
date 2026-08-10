@@ -1135,21 +1135,6 @@ groups:
     gshadow:
       password: x
 
-  lightdm:
-    gid: 135
-    # TODO: to check
-    password: x
-    user:
-      uid: 135
-      gid: 135
-      homedir: /dev/null
-      shell: /sbin/nologin
-      password: x
-    shadow:
-      password: "!"
-    gshadow:
-      password: x
-
   subsonic:
     gid: 136
     # TODO: to check
