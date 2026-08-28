@@ -330,3 +330,15 @@ users:
     password: x
     shadow:
       password: "!"
+
+  gdm-greeter:
+    uid: 549
+    gid: 32
+    homedir: /var/lib/gdm-greeter
+    shell: /sbin/nologin
+    password: x
+    info: "GDM Greeter user"
+    group: "gdm"
+    shadow:
+      password: "!"
+
