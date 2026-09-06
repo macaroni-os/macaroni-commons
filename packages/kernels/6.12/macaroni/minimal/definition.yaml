@@ -1,5 +1,5 @@
 name: macaroni-minimal
-version: 6.12.89
+version: 6.12.108
 category: kernel-6.12
 kernelprefix: kernel-vanilla
 arch: "x86_64"
@@ -10,4 +10,4 @@ requires:
     version: '>=0'
     category: app-admin
 labels:
-  package.version: 6.12.89
+  package.version: 6.12.108
