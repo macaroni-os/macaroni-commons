@@ -1,0 +1,41 @@
+image: "macaronios/terragon-minimal-devel:latest-amd64"
+env:
+- ARCH=x86_64
+- KERNEL_PREFIX=vanilla
+- SUFFIX=macaroni
+- KERNEL_TYPE=linux
+prelude:
+- >-
+  export LUET_YES=true &&
+  luet repo update &&
+  luet i app-arch/zstd app-arch/xz-utils sys-devel/flex
+  sys-devel/bison sys-libs/ncurses sys-devel/make dev-util/kbuild
+  dev-vcs/git dev-libs/openssl dev-libs/elfutils
+  binutils sys-libs/binutils-libs
+  sys-devel/gcc-config
+  sys-apps/gawk
+  virtual/base
+  sys-apps/diffutils
+  sys-apps/baselayout
+  sys-apps/lsb-release
+  sys-apps/portage
+  net-misc/wget
+  app-misc/ca-certificates
+  sys-kernel/linux-headers
+  sys-devel/bc
+  sys-apps/kmod
+  &&
+  mkdir -p /etc/portage /tmp &&
+  echo "CHOST=\"${ARCH}-pc-linux-gnu\"" > /etc/portage/make.conf &&
+  /usr/bin/gcc-config 1 &&
+  eselect gcc set 1 &&
+  mkdir -p /var/lib/portage &&
+  eval 'rm /etc/localtime || true' &&
+  ln -s /usr/share/zoneinfo/Europe/Rome /etc/localtime &&
+  env-update &&
+  ldconfig &&
+  luet cleanup --purge-repos
+- bash prepare.sh
+steps:
+- bash build.sh
+package_dir: /luetbuild/output

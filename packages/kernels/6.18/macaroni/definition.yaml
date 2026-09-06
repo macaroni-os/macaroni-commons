@@ -1,0 +1,22 @@
+name: macaroni-full
+version: 6.18.49
+category: kernel-6.18
+requires:
+  - name: macaroni-modules
+    version: '>=0'
+    category: kernel-6.18
+  - name: macaronictl
+    version: '>=0'
+    category: app-admin
+  - name: sh
+    version: '>=0'
+    category: virtual
+annotations:
+  kernel:
+    eol: "N/A"
+    lts: true
+    released: "2025-12-01"
+    suffix: macaroni
+    type: vanilla
+labels:
+  package.version: 6.18.49
