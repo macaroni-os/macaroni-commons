@@ -1,0 +1,13 @@
+name: macaroni-minimal
+version: 6.18.49
+category: kernel-6.18
+kernelprefix: kernel-vanilla
+arch: "x86_64"
+suffix: macaroni
+prefix: linux
+requires:
+  - name: macaronictl
+    version: '>=0'
+    category: app-admin
+labels:
+  package.version: 6.18.49
