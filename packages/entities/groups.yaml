@@ -6395,6 +6395,37 @@ groups:
     gshadow:
       password: "!"
 
+  ai:
+    gid: 548
+    password: x
+    user:
+      uid: 548
+      gid: 548
+      homedir: /dev/null
+      shell: /sbin/nologin
+      password: x
+    shadow:
+      password: "!"
+    gshadow:
+      password: "!"
+
+  silo:
+    gid: 549
+    # TODO: to check
+    password: x
+    user:
+      uid: 549
+      gid: 549
+      homedir: /var/lib/silo/
+      shell: /sbin/nologin
+      password: x
+    shadow:
+      password: "!"
+    gshadow:
+      password: "!"
+
+
+
   nogroup:
     gid: 65533
     # TODO: to check
