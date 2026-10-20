@@ -9,6 +9,6 @@ general:
 solver:
   implementation: "solverv2"
 system:
-  tmpdir_base: "/luetmp"
+  tmpdir_base: "/anisemp"
 
 repositories:

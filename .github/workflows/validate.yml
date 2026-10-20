@@ -15,11 +15,9 @@ jobs:
     - uses: actions/checkout@v2
     - run: |
         git fetch --prune --unshallow
+
     - name: Validate 🔧
-        #luet upgrade
-        #sudo wget -O /usr/bin/luet https://github.com/geaaru/luet/releases/download/v0.21.2-geaaru/luet-v0.21.2-geaaru-linux-amd64
-        # sudo chmod a+x /usr/bin/luet
       run: |
-        curl https://raw.githubusercontent.com/macaroni-os/anise/macaroni/contrib/config/get_luet_root.sh | sudo sh
-        sudo luet i system/luet-build -y
+        curl https://raw.githubusercontent.com/macaroni-os/anise/refs/heads/geaaru/contrib/config/get_anise_root.sh | sudo sh
+        sudo anise upgrade -y && sudo anise i -y app-admin/anise-build
         make validate

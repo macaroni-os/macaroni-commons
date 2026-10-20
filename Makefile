@@ -3,7 +3,7 @@ CONCURRENCY?=1
 PACKAGES?=
 
 # Abs path only. It gets copied in chroot in pre-seed stages
-LUET?=/usr/bin/luet-build
+ANISE_BUILD?=/usr/bin/anise-build
 export ROOT_DIR:=$(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 DESTINATION?=$(ROOT_DIR)/build
 COMPRESSION?=zstd
@@ -20,7 +20,7 @@ REPO_DESC?=Macaroni OS Commons
 REPO_URL??=https://dl.macaronios.org/repos/macaroni-commons/
 REPO_VALUES?=
 export REPO_VALUES
-CONFIG?=--config conf/luet.yaml
+CONFIG?=--config conf/anise.yaml
 
 ifneq ($(strip $(REPO_CACHE)),)
   BUILD_ARGS+=--image-repository $(REPO_CACHE)
@@ -42,31 +42,31 @@ clean:
 	rm -rf build/ *.tar *.metadata.yaml
 
 .PHONY: build
-build: clean
+build: clean genidx
 	mkdir -p $(ROOT_DIR)/build
-	$(SUDO) $(LUET) build $(BUILD_ARGS) --tree=$(TREE) $(PACKAGES) --destination $(ROOT_DIR)/build --backend $(BACKEND) --concurrency $(CONCURRENCY) --compression $(COMPRESSION)
+	$(SUDO) $(ANISE_BUILD) build $(BUILD_ARGS) --tree=$(TREE) $(PACKAGES) --destination $(ROOT_DIR)/build --backend $(BACKEND) --concurrency $(CONCURRENCY) --compression $(COMPRESSION)
 
 .PHONY: build-all
-build-all: clean
+build-all: clean genidx
 	mkdir -p $(ROOT_DIR)/build
-	$(SUDO) $(LUET) build $(BUILD_ARGS) --tree=$(TREE) --all --destination $(ROOT_DIR)/build --backend $(BACKEND) --concurrency $(CONCURRENCY) --compression $(COMPRESSION)
+	$(SUDO) $(ANISE_BUILD) build $(BUILD_ARGS) --tree=$(TREE) --all --destination $(ROOT_DIR)/build --backend $(BACKEND) --concurrency $(CONCURRENCY) --compression $(COMPRESSION)
 	rm -rf $(ROOT_DIR)/build/*.image.tar
 
 .PHONY: rebuild
-rebuild:
-	$(SUDO) $(LUET) build $(BUILD_ARGS) --tree=$(TREE) $(PACKAGES) --destination $(ROOT_DIR)/build --backend $(BACKEND) --concurrency $(CONCURRENCY) --compression $(COMPRESSION)
+rebuild: genidx
+	$(SUDO) $(ANISE_BUILD) build $(BUILD_ARGS) --tree=$(TREE) $(PACKAGES) --destination $(ROOT_DIR)/build --backend $(BACKEND) --concurrency $(CONCURRENCY) --compression $(COMPRESSION)
 
 .PHONY: rebuild-all
-rebuild-all:
-	$(SUDO) $(LUET) build $(BUILD_ARGS) --tree=$(TREE) --all --destination $(ROOT_DIR)/build --backend $(BACKEND) --concurrency $(CONCURRENCY) --compression $(COMPRESSION)
+rebuild-all: genidx
+	$(SUDO) $(ANISE_BUILD) build $(BUILD_ARGS) --tree=$(TREE) --all --destination $(ROOT_DIR)/build --backend $(BACKEND) --concurrency $(CONCURRENCY) --compression $(COMPRESSION)
 
 .PHONY: genidx
 genidx:
-	$(SUDO) $(LUET) tree genidx $(GENIDX_ARGS) --tree=$(TREE)
+	$(SUDO) $(ANISE_BUILD) tree genidx $(GENIDX_ARGS) --tree=$(TREE)
 
 .PHONY: create-repo
 create-repo: genidx
-	$(LUET) create-repo $(CONFIG) --tree "$(TREE)" \
+	$(ANISE_BUILD) create-repo $(CONFIG) --tree "$(TREE)" \
     --output $(DESTINATION) \
     --packages $(DESTINATION) \
     --name "$(REPO_NAME)" \
@@ -79,14 +79,7 @@ create-repo: genidx
 
 .PHONY: serve-repo
 serve-repo:
-	LUET_NOLOCK=true $(LUET) serve-repo --port 8000 --dir $(ROOT_DIR)/build
-
-.PHONY: autobump
-autobump:
-	TREE_DIR=$(ROOT_DIR) $(LUET) autobump-github
-	
-.PHONY: auto-bump
-auto-bump: autobump
+	ANISE_NOLOCK=true $(ANISE_BUILD) serve-repo --port 8000 --dir $(ROOT_DIR)/build
 
 repository:
 	mkdir -p $(ROOT_DIR)/repository
@@ -98,5 +91,5 @@ repository/macaroni-funtoo:
 	git clone -b terragon --single-branch https://github.com/macaroni-os/macaroni-funtoo.git $(ROOT_DIR)/repository/macaroni-funtoo
 
 .PHONY: validate
-validate: repository repository/mark repository/macaroni-funtoo
-	$(LUET) tree validate --tree $(ROOT_DIR)/repository --tree $(TREE) $(VALIDATE_OPTIONS)
+validate: repository repository/mark repository/macaroni-funtoo genidx
+	$(ANISE_BUILD) tree validate --tree $(ROOT_DIR)/repository --tree $(TREE) $(VALIDATE_OPTIONS)
