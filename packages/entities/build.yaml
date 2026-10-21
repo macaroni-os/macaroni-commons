@@ -1,10 +1,10 @@
-image: "macaronios/phoenix-minimal:latest-amd64"
+image: "macaronios/terragon-minimal:latest-amd64"
 steps:
 - >-
-  luet repo update &&
-  luet upgrade -y &&
-  luet i --sync-repos utils/jq utils/yq -y &&
-  luet cleanup &&
+  anise repo update &&
+  anise upgrade -y &&
+  anise i --sync-repos utils/jq utils/yq -y &&
+  anise cleanup &&
   mkdir /{{ .Values.name }}/usr/share/macaroni/entities -p &&
   TARGET_DIR=/{{ .Values.name }}/usr/share/macaroni/entities/
   bash scripts/generator.sh
