@@ -6426,6 +6426,62 @@ groups:
 
 
 
+  loki:
+    gid: 513
+    password: x
+    user:
+      uid: 513
+      gid: 513
+      homedir: /var/lib/loki
+      shell: /sbin/nologin
+      password: x
+    shadow:
+      password: "!"
+    gshadow:
+      password: "!"
+
+  tempo:
+    gid: 514
+    password: x
+    user:
+      uid: 514
+      gid: 514
+      homedir: /var/lib/tempo
+      shell: /sbin/nologin
+      password: x
+    shadow:
+      password: "!"
+    gshadow:
+      password: "!"
+
+  mimir:
+    gid: 515
+    password: x
+    user:
+      uid: 515
+      gid: 515
+      homedir: /var/lib/mimir
+      shell: /sbin/nologin
+      password: x
+    shadow:
+      password: "!"
+    gshadow:
+      password: "!"
+
+  alloy:
+    gid: 516
+    password: x
+    user:
+      uid: 516
+      gid: 516
+      homedir: /var/lib/alloy
+      shell: /sbin/nologin
+      password: x
+    shadow:
+      password: "!"
+    gshadow:
+      password: "!"
+
   nogroup:
     gid: 65533
     # TODO: to check
