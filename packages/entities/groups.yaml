@@ -5182,6 +5182,21 @@ groups:
     gshadow:
       password: "!"
 
+  kube-proxy:
+    gid: 518
+    # TODO: to check
+    password: x
+    user:
+      uid: 518
+      gid: 518
+      homedir: /dev/null
+      shell: /sbin/nologin
+      password: x
+    shadow:
+      password: "!"
+    gshadow:
+      password: "!"
+
   clamav:
     gid: 435
     # TODO: to check
