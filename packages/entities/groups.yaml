@@ -5167,6 +5167,21 @@ groups:
     gshadow:
       password: "!"
 
+  kubelet:
+    gid: 517
+    # TODO: to check
+    password: x
+    user:
+      uid: 517
+      gid: 517
+      homedir: /dev/null
+      shell: /sbin/nologin
+      password: x
+    shadow:
+      password: "!"
+    gshadow:
+      password: "!"
+
   clamav:
     gid: 435
     # TODO: to check
