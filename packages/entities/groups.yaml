@@ -6512,6 +6512,20 @@ groups:
     gshadow:
       password: "!"
 
+  rustfs:
+    gid: 519
+    password: x
+    user:
+      uid: 519
+      gid: 519
+      homedir: /dev/null
+      shell: /sbin/nologin
+      password: x
+    shadow:
+      password: "!"
+    gshadow:
+      password: "!"
+
   nogroup:
     gid: 65533
     # TODO: to check
